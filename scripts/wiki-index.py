@@ -5,6 +5,7 @@ Wiki Index - 自动生成索引和统计
 """
 
 import os
+import re
 import json
 import argparse
 from pathlib import Path
@@ -13,6 +14,7 @@ from collections import Counter
 WIKI_DIR = Path(__file__).parent.parent / "wiki"
 RAW_DIR = Path(__file__).parent.parent / "raw"
 GRAPH_FILE = Path(__file__).parent.parent / "元数据" / "关联图谱.json"
+SYSTEM_FILES = ['INDEX.md', 'SUMMARY.md', 'STATS.md', 'TEMPLATE.md', 'README.md']
 
 
 def get_timestamp():
@@ -24,7 +26,7 @@ def get_all_articles():
     articles = []
     for root, dirs, files in os.walk(WIKI_DIR):
         for file in files:
-            if file.endswith('.md') and file not in ['INDEX.md', 'SUMMARY.md', 'STATS.md']:
+            if file not in SYSTEM_FILES and file.endswith('.md'):
                 file_path = Path(root) / file
                 rel_path = file_path.relative_to(WIKI_DIR)
 
@@ -58,19 +60,29 @@ def get_all_articles():
 
 
 def get_categories():
-    """按分类组织文章"""
+    """按分类组织文章（只遍历一次，不重复）"""
     categories = {}
+    seen = set()  # 去重：防止同名文件重复录入
     for root, dirs, files in os.walk(WIKI_DIR):
         for file in files:
-            if file.endswith('.md') and file not in ['INDEX.md', 'SUMMARY.md', 'STATS.md']:
+            if file not in SYSTEM_FILES and file.endswith('.md'):
                 rel_path = Path(root).relative_to(WIKI_DIR)
                 category = str(rel_path).split('/')[0] if str(rel_path) != '.' else 'root'
+
+                # 去重依据：相对路径
+                article_key = str(rel_path / file)
+                if article_key in seen:
+                    continue
+                seen.add(article_key)
 
                 if category not in categories:
                     categories[category] = []
 
+                # 跳过 YAML frontmatter，读取第一个 # 标题
                 with open(Path(root) / file, 'r', encoding='utf-8') as f:
-                    title = f.readline().strip('# \n') if f.readline().startswith('# ') else file
+                    content_sample = f.read(2000)
+                title_match = re.search(r'^#\s+(.+?)\s*$', content_sample, re.MULTILINE)
+                title = title_match.group(1).strip() if title_match else file
 
                 categories[category].append({
                     "file": file,

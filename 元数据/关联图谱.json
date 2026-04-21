@@ -1,55 +1,285 @@
 {
   "documents": {
-    "1745212800000": {
-      "title": "Hermes+AutoCLI+Obsidian知识系统",
-      "category": "知识管理",
-      "subcategory": "工具方法",
-      "first_principle": "知识管理三层架构：输入层(Hermes)→处理层(AutoCLI)→存储层(Obsidian)。核心是零摩擦录入+分级推送，只推report-required内容避免通知疲劳。",
-      "key_tags": ["Hermes", "AutoCLI", "Obsidian", "知识管理", "自动化", "微信推送"],
+    "6cabcf36": {
+      "title": "集采常态化、仿制药利润被挤压，国有药企如何破局？",
+      "category": "行业研究",
+      "subcategory": "articles",
+      "first_principle": "【集采常态化、仿制药利润被挤压，国有药企如何破局？】的核心规律：- 力生制药：天津市唯一上市国有药企，73年历史，科改示范企业",
+      "key_tags": [
+        "集采",
+        "仿制药",
+        "国有药企",
+        "医保谈判"
+      ],
       "created": "2026-04-21",
-      "connections": ["1745212800001"]
+      "connections": [
+        "5aca2117"
+      ]
     },
-    "1745212800001": {
+    "5aca2117": {
+      "title": "给Karpathy的LLM Wiki装上自动引擎",
+      "category": "行业研究",
+      "subcategory": "articles",
+      "first_principle": "【给Karpathy的LLM Wiki装上自动引擎】的核心规律：文章提出将手动维护的知识库升级为自动运转系统，通过三个阶段（信息抓取→知识编译→主动推送）实现'人在给AI打工'到'AI给人打工'的转变",
+      "key_tags": [
+        "LLM",
+        "知识库",
+        "AI自动化",
+        "Karpathy"
+      ],
+      "created": "2026-04-21",
+      "connections": [
+        "1148daf9"
+      ]
+    },
+    "1148daf9": {
+      "title": "手搓财务智能体（10）：财务智能体（数字化员工）规划",
+      "category": "行业研究",
+      "subcategory": "articles",
+      "first_principle": "【手搓财务智能体（10）：财务智能体（数字化员工）规划】的核心规律：# 手搓财务智能体（10）：财务智能体（数字化员工）规划 > 来源：微信公众号 - 海龙的AI财智道",
+      "key_tags": [
+        "财务智能体",
+        "AI",
+        "数字化员工",
+        "自动化"
+      ],
+      "created": "2026-04-21",
+      "connections": [
+        "5aca2117"
+      ]
+    },
+    "6f520726": {
+      "title": "Citadel Securities向SEC提议试点更小价格变动单位",
+      "category": "行业研究",
+      "subcategory": "articles",
+      "first_principle": "【Citadel Securities向SEC提议试点更小价格变动单位】的核心规律：# Citadel Securities向SEC提议试点更小价格变动单位 > URL：https://finance.sina.com.cn/stock/usstock/c/2026-04-20/doc-inhvenru6664580.shtml",
+      "key_tags": [
+        "SEC",
+        "Citadel",
+        "美股",
+        "价格改革"
+      ],
+      "created": "2026-04-21",
+      "connections": [
+        "7f8d21cb"
+      ]
+    },
+    "19751fec": {
+      "title": "财务预警系统—财务指标分析体系",
+      "category": "行业研究",
+      "subcategory": "articles",
+      "first_principle": "【财务预警系统—财务指标分析体系】的核心规律：> URL：https://mp.weixin.qq.com/s/WBBdSbOgcVFp9T3M9c-bIA > 标签：微信 | 财务预警 | 财务指标 | 风险分析 | 风控",
+      "key_tags": [
+        "财务预警",
+        "财务指标",
+        "风险分析",
+        "风控"
+      ],
+      "created": "2026-04-21",
+      "connections": [
+        "2911ff9c"
+      ]
+    },
+    "7f8d21cb": {
+      "title": "港股交易将迎重大调整！港交所发布T+1结算周期咨询文件",
+      "category": "行业研究",
+      "subcategory": "articles",
+      "first_principle": "【港股交易将迎重大调整！港交所发布T+1结算周期咨询文件】的核心规律：港交所正式发布咨询文件，拟将港股现货市场结算周期从T+2缩短至T+1，预计2027年Q4落地，为期4周的公开征询截止至5月18日",
+      "key_tags": [
+        "港股",
+        "T+1",
+        "港交所",
+        "结算改革"
+      ],
+      "created": "2026-04-21",
+      "connections": [
+        "6f520726"
+      ]
+    },
+    "8e7a22f4": {
+      "title": "加拿大金融企业EQB计划发行2亿加元有限追索权资本票据",
+      "category": "行业研究",
+      "subcategory": "articles",
+      "first_principle": "【加拿大金融企业EQB计划发行2亿加元有限追索权资本票据】的核心规律：# 加拿大金融企业EQB计划发行2亿加元有限追索权资本票据 > URL：https://finance.sina.com.cn/stock/usstock/c/2026-04-20/doc-inhvenry7405427.shtml",
+      "key_tags": [
+        "加拿大",
+        "银行",
+        "资本票据"
+      ],
+      "created": "2026-04-21",
+      "connections": [
+        "bcc52c7d"
+      ]
+    },
+    "0aeb6b04": {
+      "title": "上海金融法院案例：私募基金托管人职责边界",
+      "category": "法院判决",
+      "subcategory": "articles",
+      "first_principle": "【上海金融法院案例：私募基金托管人职责边界】的核心规律：上海金融法院二审改判：私募基金托管人（恒某证券）在面对\"交易对手单一、投资标的金额巨大、交易高频\"等异常情形时，仅做形式审查即执行划款指令，未对票据权属真实性保持合理职业怀疑，存在过错，需承担10%赔偿责任（15.3万元/170万元本金）",
+      "key_tags": [
+        "法院判决",
+        "私募基金",
+        "托管人职责",
+        "信义义务",
+        "金融裁判",
+        "上海金融法院",
+        "票据私募基金"
+      ],
+      "created": "2026-04-21",
+      "connections": [
+        "05c020fa",
+        "4e1abdfc"
+      ]
+    },
+    "5fb93af7": {
+      "title": "中东买家自伊朗开战以来已达成470亿美元交易",
+      "category": "行业研究",
+      "subcategory": "articles",
+      "first_principle": "【中东买家自伊朗开战以来已达成470亿美元交易】的核心规律：# 中东买家自伊朗开战以来已达成470亿美元交易 > URL：https://finance.sina.com.cn/stock/usstock/c/2026-04-20/doc-inhvenru6662007.shtml",
+      "key_tags": [
+        "中东",
+        "伊朗",
+        "外贸",
+        "地缘政治"
+      ],
+      "created": "2026-04-21",
+      "connections": []
+    },
+    "102e4517": {
+      "title": "Hermes+AutoCLI+Obsidian：打造自动入库、自动整理、自动微信汇报的知识系统",
+      "category": "知识管理",
+      "subcategory": "articles",
+      "first_principle": "【Hermes+AutoCLI+Obsidian：打造自动入库、自动整理、自动微信汇报的知识系统】的核心规律：知识管理系统的核心痛点是「手动整理费时又容易遗忘」 解决思路是「内容进来，自动处理好，人只需要做决策」",
+      "key_tags": [
+        "Hermes",
+        "Obsidian",
+        "知识库",
+        "微信"
+      ],
+      "created": "2026-04-21",
+      "connections": [
+        "5aca2117"
+      ]
+    },
+    "e9e2e748": {
       "title": "「十五五」重点产业布局研究",
       "category": "行业研究",
-      "subcategory": "宏观经济",
-      "first_principle": "「十五五」产业布局三路并进：传统产业重构、新兴产业壮大、未来产业前瞻布局。传统产业≠夕阳产业，是国民经济稳定支撑；低空经济首次纳入国家规划，万亿级市场机遇。",
-      "key_tags": ["十五五", "传统产业", "新兴产业", "未来产业", "低空经济", "产业布局"],
+      "subcategory": "articles",
+      "first_principle": "【「十五五」重点产业布局研究】的核心规律：2026年是「十五五」规划起始之年，中国产业发展处于从「规模扩张」向「内涵提升」转变的关键节点 规划明确「三路并进」：优化提升传统产业、培育壮大新兴产业、前瞻布局未来产业",
+      "key_tags": [
+        "十五五",
+        "产业布局",
+        "政策规划"
+      ],
       "created": "2026-04-21",
-      "connections": ["cibank_credit_2026", "coke_2026_001"]
+      "connections": [
+        "05c020fa"
+      ]
     },
-    "745fc10a": {
+    "689af4a1": {
       "title": "2025年招商银行票据业务分析",
       "category": "行业研究",
       "subcategory": "articles",
-      "first_principle": "银行票据业务具有显著的利率敏感性和顺周期特征——利率高位时增配、低位时减配；承兑业务风险滞后于经济周期。",
-      "key_tags": ["招商银行", "票据业务", "银票承兑", "票据贴现"],
-      "created": "2026-04-20",
+      "first_principle": "【2025年招商银行票据业务分析】的核心规律：招商银行2025年银票承兑余额6129亿元(+4.84%)，票据贴现余额3221亿元(-15.22%)；承兑汇票阶段二余额由30.54亿升至48.02亿，风险有所上升；商票贴现余额1112亿元(+32.5%)，银票贴现余额2110亿元(-28.7%)",
+      "key_tags": [],
+      "created": "2026-04-21",
       "connections": []
     },
-    "coke_2026_001": {
-      "title": "关于优化焦化行业评审策略的通知",
-      "category": "监管政策",
-      "subcategory": "行业授信政策",
-      "first_principle": "焦化企业生存能力取决于产业链纵深程度——联产型>独立型。联产型企业通过'煤-焦-化-材'多环节利润对冲平滑周期风险。",
-      "key_tags": ["焦化行业", "授信政策", "行业评审", "风险防控", "联产型企业"],
-      "created": "2026-03-20",
-      "connections": []
+    "a9d7a1f4": {
+      "title": "搞完Hermes多Agent我才发现，这根本不是技术活，是管理活",
+      "category": "行业研究",
+      "subcategory": "articles",
+      "first_principle": "【搞完Hermes多Agent我才发现，这根本不是技术活，是管理活】的核心规律：作者在搭建Hermes多Agent协作系统时，经历了多个技术坑和管理挑战，最终发现多Agent协作的本质是'管理'而非'技术'",
+      "key_tags": [
+        "Hermes",
+        "多Agent",
+        "AI管理"
+      ],
+      "created": "2026-04-21",
+      "connections": [
+        "5aca2117"
+      ]
     },
-    "cibank_credit_2026": {
+    "4e1abdfc": {
+      "title": "BCG报告：效率之后，中国医药创新的价值攀登",
+      "category": "行业研究",
+      "subcategory": "articles",
+      "first_principle": "【BCG报告：效率之后，中国医药创新的价值攀登】的核心规律：中国创新药新分子（NME）数量自2021年起已超过美国，在全球创新药版图中从\"追随者\"跃升为\"创新新极\"，并持续扩大领先优势",
+      "key_tags": [
+        "BCG",
+        "医药",
+        "创新",
+        "中国"
+      ],
+      "created": "2026-04-21",
+      "connections": [
+        "6cabcf36"
+      ]
+    },
+    "2911ff9c": {
+      "title": "全面风险管理最大的失败：风险部门没有真正的\"定价权\"",
+      "category": "风险管理",
+      "subcategory": "articles",
+      "first_principle": "【全面风险管理最大的失败：风险部门没有真正的\"定价权\"】的核心规律：很多金融机构的全面风险管理越来越\"完整\"——制度厚、报表多、预警细、系统全，但对业务方向、资产结构、资源分配的实际影响却非常有限 风险部门有表达权、提醒权、参会权、报告权，但没有真正的定价影响权、额度分配权、资源倾斜权",
+      "key_tags": [
+        "风险管理",
+        "银行管理",
+        "全面风险管理",
+        "定价权",
+        "资源配置",
+        "信贷管理"
+      ],
+      "created": "2026-04-21",
+      "connections": [
+        "05c020fa",
+        "73e5977f"
+      ]
+    },
+    "bcc52c7d": {
+      "title": "美国最高法院拒绝受理银行上诉，市政债券价格操纵集体诉讼案继续推进",
+      "category": "行业研究",
+      "subcategory": "articles",
+      "first_principle": "【美国最高法院拒绝受理银行上诉，市政债券价格操纵集体诉讼案继续推进】的核心规律：# 美国最高法院拒绝受理银行上诉，市政债券价格操纵集体诉讼案继续推进 > URL：https://finance.sina.com.cn/stock/usstock/c/2026-04-20/doc-inhvenrx0631086.shtml",
+      "key_tags": [
+        "美国",
+        "银行",
+        "市政债券",
+        "SEC"
+      ],
+      "created": "2026-04-21",
+      "connections": [
+        "8e7a22f4"
+      ]
+    },
+    "05c020fa": {
       "title": "兴业银行2026年授信政策",
       "category": "监管政策",
-      "subcategory": "银行授信政策",
-      "first_principle": "银行授信政策的核心逻辑是'行业周期+政策导向+主体资质'三维评估——强周期行业看周期位置，政策敏感行业看合规性，成熟行业看主体竞争力。",
-      "key_tags": ["兴业银行", "授信政策", "68行业", "优先合作", "适度合作", "审慎合作"],
-      "created": "2026-04-20",
-      "connections": ["coke_2026_001", "1745212800001"]
+      "subcategory": "concepts",
+      "first_principle": "【兴业银行2026年授信政策】的核心规律：兴业银行2026年授信政策涵盖68个行业，包括医院、烟草、电信、医药、城投、煤炭、钢铁、房地产等；政策分为\"优先合作\"、\"适度合作\"、\"审慎合作\"三类管理",
+      "key_tags": [],
+      "created": "2026-04-21",
+      "connections": []
+    },
+    "73e5977f": {
+      "title": "关于优化焦化行业评审策略的通知",
+      "category": "监管政策",
+      "subcategory": "concepts",
+      "first_principle": "【关于优化焦化行业评审策略的通知】的核心规律：2025年国内焦炭运行产能5.7亿吨，产量约4.5亿吨(+2.3%)，均价1348元/吨(-27%)，行业普遍亏损 产能集中于山西、内蒙古、河北、山东四省(51%)",
+      "key_tags": [],
+      "created": "2026-04-21",
+      "connections": []
     }
   },
   "connection_reasons": {
-    "1745212800000-1745212800001": "均为知识管理方法论参考",
-    "1745212800001-cibank_credit_2026": "「十五五」产业布局是银行授信政策的重要参考",
-    "745fc10a-coke_2026_001": "均为银行授信业务相关",
-    "cibank_credit_2026-coke_2026_001": "同业授信政策参考"
+    "0aeb6b04-05c020fa": "上海金融法院案例：私募基金托管人职责边界 → 05c020fa",
+    "0aeb6b04-4e1abdfc": "上海金融法院案例：私募基金托管人职责边界 → 4e1abdfc",
+    "102e4517-e9e2e748": "Hermes+AutoCLI+Obsid → e9e2e748",
+    "e9e2e748-102e4517": "「十五五」重点产业布局研究 → 102e4517",
+    "e9e2e748-05c020fa": "「十五五」重点产业布局研究 → 05c020fa",
+    "e9e2e748-73e5977f": "「十五五」重点产业布局研究 → 73e5977f",
+    "4e1abdfc-05c020fa": "BCG报告：效率之后，中国医药创新的价值 → 05c020fa",
+    "4e1abdfc-e9e2e748": "BCG报告：效率之后，中国医药创新的价值 → e9e2e748",
+    "2911ff9c-05c020fa": "全面风险管理最大的失败：风险部门没有真正 → 05c020fa",
+    "2911ff9c-73e5977f": "全面风险管理最大的失败：风险部门没有真正 → 73e5977f"
   }
 }

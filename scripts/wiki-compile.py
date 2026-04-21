@@ -9,30 +9,19 @@ import re
 import json
 import uuid
 import argparse
+import yaml
 from pathlib import Path
 from datetime import datetime
 
-WIKI_DIR = Path(__file__).parent.parent / "wiki"
-RAW_DIR = Path(__file__).parent.parent / "raw"
-GRAPH_FILE = Path(__file__).parent.parent / "元数据" / "关联图谱.json"
-
-
-# 信贷知识库分类映射
-CATEGORY_MAP = {
-    "企业财报": "concepts",
-    "行业研究": "articles",
-    "监管政策": "concepts",
-    "法院判决": "articles",
-    "信贷合同": "concepts"
-}
+from graph_utils import (
+    get_stable_doc_id, load_graph, save_graph, rebuild_graph,
+    WIKI_DIR, RAW_DIR, GRAPH_FILE, CATEGORY_MAP
+)
 
 
 def get_raw_files():
     """获取所有原始资料"""
     files = []
-    for root, dirs, folders in os.walk(RAW_DIR):
-        for file in files:
-            pass
     for category in RAW_DIR.iterdir():
         if category.is_dir() and not category.name.startswith('.'):
             for file in category.iterdir():
@@ -46,7 +35,7 @@ def get_raw_files():
 
 
 def extract_metadata(content):
-    """提取文档元数据"""
+    """提取文档元数据（支持 YAML frontmatter + 降级解析）"""
     metadata = {
         "title": "",
         "source": "",
@@ -55,91 +44,99 @@ def extract_metadata(content):
         "doc_id": ""
     }
 
+    # 优先尝试 YAML frontmatter
+    fm_match = re.match(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
+    if fm_match:
+        try:
+            fm = yaml.safe_load(fm_match.group(1))
+            if fm:
+                metadata["title"] = fm.get("title", "")
+                metadata["source"] = fm.get("source", "")
+                metadata["date"] = fm.get("created", "")
+                tags = fm.get("tags", [])
+                if isinstance(tags, list):
+                    metadata["tags"] = [t for t in tags if t != "report-required"]
+                metadata["doc_id"] = str(fm.get("id", "")) or fm.get("doc_id", "")
+        except yaml.YAMLError:
+            pass
+
+    # 降级：从正文第一行提取标题（# 标题）
     lines = content.split('\n')
-    for line in lines[:20]:
-        if line.startswith('# '):
+    for line in lines:
+        if line.startswith('# ') and not metadata["title"]:
             metadata["title"] = line.strip('# ').strip()
-        if '来源' in line and ':' in line:
-            metadata["source"] = line.split(':')[1].strip()
-        if '时间' in line and ':' in line:
-            metadata["date"] = line.split(':')[1].strip()
-        if '标签' in line and ':' in line:
-            tags_str = line.split(':')[1].strip()
-            metadata["tags"] = [t.strip() for t in tags_str.split() if t.strip()]
+            break
+
+    # 降级：解析正文中的 > 来源/归档时间
+    for line in lines[:30]:
+        if '来源' in line and ':' in line and not metadata["source"]:
+            metadata["source"] = line.split('：', 1)[-1].strip().split(']')[0].strip('[')
+        if '归档时间' in line and ':' in line and not metadata["date"]:
+            metadata["date"] = line.split('：', 1)[-1].strip()
 
     return metadata
 
 
 def analyze_first_principle(content, title):
-    """分析第一性原理（模拟，实际由LLM完成）"""
-    # 提取核心句子
-    sentences = re.split(r'[。\n]', content)
+    """分析第一性原理（跳过 frontmatter 头部，从正文分析区开始提取）"""
+    # 跳过文档头部（标题 + 来源行 + frontmatter 残留）
+    header_pattern = re.compile(r'^# .+\n+>\s*来源[：:].+\n+归档时间.*\n+文档ID.*\n+---\s*\n+', re.MULTILINE)
+    body = header_pattern.sub('', content)
+
+    # 定位 "底层事实" 之后的内容作为分析素材
+    first_principle_marker = re.search(r'### 底层事实\s*\n+(.{10,})', body)
+    analysis_text = first_principle_marker.group(1) if first_principle_marker else body
+
+    sentences = re.split(r'[。\n]', analysis_text)
     key_sentences = [s.strip() for s in sentences if len(s.strip()) > 20][:5]
 
-    # 生成本质规律摘要
-    first_principle = f"【{title}】的核心规律：{' '.join(key_sentences[:2])}"
+    first_principle_text = ' '.join(key_sentences[:2]) if key_sentences else '待分析'
 
     return {
-        "底层事实": key_sentences[0] if key_sentences else "",
-        "根本原因": key_sentences[1] if len(key_sentences) > 1 else "",
-        "本质规律": first_principle,
+        "底层事实": key_sentences[0] if key_sentences else "待分析",
+        "根本原因": key_sentences[1] if len(key_sentences) > 1 else "待分析",
+        "本质规律": f"【{title}】的核心规律：{first_principle_text}",
         "信贷应用": "待分析"
     }
 
-
-def find_related_docs(current_doc_id, content, existing_graph):
-    """查找关联文档"""
-    related = []
-
-    if not existing_graph:
-        return related
-
-    current_tags = set()
-    current_words = set(re.findall(r'[\u4e00-\u9fa5]{4,}', content))
-
-    for doc_id, doc_info in existing_graph.get("documents", {}).items():
-        if doc_id == current_doc_id:
-            continue
-
-        doc_tags = set(doc_info.get("key_tags", []))
-        doc_words = set(re.findall(r'[\u4e00-\u9fa5]{4,}', doc_info.get("first_principle", "")))
-
-        # 计算关联度
-        tag_overlap = len(current_tags & doc_tags)
-        word_overlap = len(current_words & doc_words)
-
-        if tag_overlap >= 1 or word_overlap >= 3:
-            related.append({
-                "doc_id": doc_id,
-                "title": doc_info.get("title", ""),
-                "reason": doc_info.get("first_principle", "")[:50]
-            })
-
-    return related[:3]
 
 
 def compile_to_wiki(raw_file, existing_graph=None):
     """将原始资料编译为 Wiki 格式"""
     with open(raw_file['path'], 'r', encoding='utf-8') as f:
-        content = f.read()
+        raw_content = f.read()
 
-    metadata = extract_metadata(content)
-    first_principle = analyze_first_principle(content, metadata['title'])
+    metadata = extract_metadata(raw_content)
 
-    doc_id = uuid.uuid4().hex[:8]
-    related = find_related_docs(doc_id, content, existing_graph or {})
+    # 跳过 YAML frontmatter 后再分析
+    content_body = re.sub(r'^---\s*\n.*?\n---\s*\n', '', raw_content, flags=re.DOTALL)
+    first_principle = analyze_first_principle(content_body, metadata['title'])
+
+    # 复用已有 doc_id（同一标题+分类保持稳定）
+    doc_id = get_stable_doc_id(metadata['title'], raw_file['category'], existing_graph or {})
+    if not doc_id:
+        doc_id = uuid.uuid4().hex[:8]
 
     # 确定输出目录
     subdir = CATEGORY_MAP.get(raw_file['category'], 'articles')
     output_dir = WIKI_DIR / subdir
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # 生成 Wiki 文章
-    wiki_content = f"""# {metadata['title']}
+    # 生成 Wiki 文章（含标准化 frontmatter）
+    wiki_content = f"""---
+doc_id: {doc_id}
+title: {metadata['title']}
+date: {datetime.now().strftime('%Y-%m-%d')}
+category: {raw_file['category']}
+source: {metadata['source'] or ''}
+tags:
+{chr(10).join(f"  - {t}" for t in metadata['tags']) if metadata['tags'] else '  []'}
+---
+
+# {metadata['title']}
 
 > 来源：{metadata['source'] or raw_file['path'].name}
 > 归档时间：{datetime.now().strftime('%Y-%m-%d %H:%M')}
-> 标签：{' '.join(metadata['tags']) if metadata['tags'] else raw_file['category']}
 > 文档ID：{doc_id}
 
 ---
@@ -162,19 +159,12 @@ def compile_to_wiki(raw_file, existing_graph=None):
 
 ## 📌 核心要点
 
-{content[:1000]}...
+{content_body[:1000]}...
 
 ---
 
-## 🔗 关联文档
-
+_关联关系由 graph_utils 统一从 wikilink 自动提取_
 """
-
-    for rel in related:
-        wiki_content += f"- [[{rel['title']}]]：{rel['reason']}\n"
-
-    if not related:
-        wiki_content += "_暂无关联文档_\n"
 
     # 保存文件
     safe_name = re.sub(r'[^\u4e00-\u9fa5a-zA-Z0-9]', '_', metadata['title'])[:50]
@@ -191,34 +181,7 @@ def compile_to_wiki(raw_file, existing_graph=None):
         "first_principle": first_principle['本质规律'],
         "key_tags": metadata['tags'],
         "file": str(output_file),
-        "related": [r['doc_id'] for r in related]
     }
-
-
-def update_graph(new_doc_info, existing_graph=None):
-    """更新关联图谱"""
-    if existing_graph is None:
-        existing_graph = {"documents": {}, "connection_reasons": {}}
-
-    doc_id = new_doc_info['doc_id']
-
-    # 添加文档
-    existing_graph["documents"][doc_id] = {
-        "title": new_doc_info['title'],
-        "category": new_doc_info['category'],
-        "subcategory": new_doc_info['subcategory'],
-        "first_principle": new_doc_info['first_principle'],
-        "key_tags": new_doc_info['key_tags'],
-        "created": datetime.now().strftime('%Y-%m-%d'),
-        "connections": new_doc_info['related']
-    }
-
-    # 添加关联关系
-    for rel_id in new_doc_info['related']:
-        key = f"{doc_id}-{rel_id}"
-        existing_graph["connection_reasons"][key] = "领域关联"
-
-    return existing_graph
 
 
 def main():
@@ -229,12 +192,7 @@ def main():
     parser.add_argument('--dry-run', action='store_true', help='试运行不实际写入')
     args = parser.parse_args()
 
-    # 加载现有图谱
-    graph = {}
-    if GRAPH_FILE.exists():
-        with open(GRAPH_FILE, 'r', encoding='utf-8') as f:
-            graph = json.load(f)
-
+    graph = load_graph()
     compiled = []
 
     if args.all or args.category or args.file:
@@ -251,15 +209,24 @@ def main():
             doc_info = compile_to_wiki(raw_file, graph)
 
             if not args.dry_run:
-                graph = update_graph(doc_info, graph)
+                # 增量更新图谱
+                subdir = CATEGORY_MAP.get(raw_file['category'], 'articles')
+                graph["documents"][doc_info['doc_id']] = {
+                    "title": doc_info['title'],
+                    "category": doc_info['category'],
+                    "subcategory": subdir,
+                    "first_principle": doc_info['first_principle'],
+                    "key_tags": doc_info['key_tags'],
+                    "created": datetime.now().strftime('%Y-%m-%d'),
+                    "connections": []
+                }
 
             compiled.append(doc_info)
 
-        # 保存图谱
+        # 统一重建连接关系后保存
         if not args.dry_run:
-            GRAPH_FILE.parent.mkdir(parents=True, exist_ok=True)
-            with open(GRAPH_FILE, 'w', encoding='utf-8') as f:
-                json.dump(graph, f, ensure_ascii=False, indent=2)
+            graph = rebuild_graph()
+            save_graph(graph)
 
     else:
         print("用法: wiki-compile.py [--all|--category <name>|--file <path>]")

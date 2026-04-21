@@ -8,6 +8,7 @@ import os
 import re
 import json
 import argparse
+import yaml
 from pathlib import Path
 from collections import defaultdict
 
@@ -15,10 +16,45 @@ WIKI_DIR = Path(__file__).parent.parent / "wiki"
 GRAPH_FILE = Path(__file__).parent.parent / "元数据" / "关联图谱.json"
 
 
+SYSTEM_FILES = ['INDEX.md', 'SUMMARY.md', 'STATS.md', 'TEMPLATE.md', 'README.md']
+
+
+def _build_title_index():
+    """从所有 wiki 文章的 frontmatter 中构建 title → filename 索引"""
+    title_to_file = {}
+    for root, dirs, files in os.walk(WIKI_DIR):
+        for file in files:
+            if file.endswith('.md') and file not in SYSTEM_FILES:
+                fp = Path(root) / file
+                with open(fp, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                # 从 frontmatter 提取 title
+                fm_m = re.search(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
+                title = None
+                if fm_m:
+                    try:
+                        fm = yaml.safe_load(fm_m.group(1)) or {}
+                        title = fm.get("title", "")
+                    except:
+                        pass
+                # 降级：从第一行 # 标题
+                if not title:
+                    m = re.match(r'^# (.+)', content)
+                    title = m.group(1).strip() if m else file
+                title_to_file[title] = fp.name
+                # 标准化版本（去标点）
+                norm = re.sub(r'[^\u4e00-\u9fa5a-zA-Z0-9]', '', title)
+                title_to_file[norm] = fp.name
+    return title_to_file
+
+
 def check_broken_links():
-    """检查断裂的 wikilink """
+    """检查断裂的 wikilink（用 frontmatter title 索引解析）"""
     broken_links = []
-    wikilink_pattern = re.compile(r'\[\[([^\]]+)\]\]')
+    wikilink_pattern = re.compile(r'\[\[([^\]|]+?)(?:\|[^\]]+)?\]\]')
+
+    # 构建全局 title → filename 索引
+    title_index = _build_title_index()
 
     for root, dirs, files in os.walk(WIKI_DIR):
         for file in files:
@@ -29,14 +65,32 @@ def check_broken_links():
 
                 links = wikilink_pattern.findall(content)
                 for link in links:
-                    link_file = WIKI_DIR / f"{link}.md"
-                    if not link_file.exists():
+                    link_stripped = link.strip()
+                    norm = re.sub(r'[^\u4e00-\u9fa5a-zA-Z0-9]', '', link_stripped)
+                    # 精确 → 标准化 → 模糊相似度，三级匹配
+                    target_file = (
+                        title_index.get(link_stripped)
+                        or title_index.get(norm)
+                        or _fuzzy_match(link_stripped, title_index)
+                    )
+                    if not target_file:
                         broken_links.append({
                             "file": str(file_path),
-                            "broken_link": link
+                            "broken_link": link_stripped
                         })
 
     return broken_links
+
+
+def _fuzzy_match(link, index_dict, threshold=0.7):
+    """模糊匹配：标题相似度 >= threshold 时认为匹配成功"""
+    from difflib import SequenceMatcher
+    best, best_s = None, 0
+    for title in index_dict:
+        s = SequenceMatcher(None, link, title).ratio()
+        if s > best_s and s >= threshold:
+            best_s, best = s, index_dict[title]
+    return best
 
 
 def check_duplicate_concepts():

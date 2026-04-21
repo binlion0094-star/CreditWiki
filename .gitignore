@@ -24,3 +24,5 @@
 # Large binary files (keep PDFs but exclude generated)
 # outputs/*.pptx
 # outputs/*.pdf
+__pycache__/
+*.pyc
