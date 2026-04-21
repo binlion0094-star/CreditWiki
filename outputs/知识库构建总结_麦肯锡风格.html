@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CreditWiki 知识库构建总结</title>
+<style>
+html, body {
+  margin: 0; padding: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  font-family: "Microsoft YaHei", Arial, sans-serif;
+}
+.slide-content {
+  width: 960px;
+  height: 540px;
+  position: relative;
+  transform-origin: center center;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+</style>
+<script>
+function scaleSlide() {
+  const slide = document.querySelector('.slide-content');
+  if (!slide) return;
+  const scaleX = window.innerWidth / 960;
+  const scaleY = window.innerHeight / 540;
+  const scale = Math.min(scaleX, scaleY);
+  slide.style.transform = `scale(${scale})`;
+}
+window.addEventListener('load', scaleSlide);
+window.addEventListener('resize', scaleSlide);
+</script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 1: COVER                              -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="slide-content" style="background:#0B1F3A;">
+  <div style="position:absolute;left:0;top:0;width:960px;height:540px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+    <p style="margin:0;font-size:14px;color:#8C8C8C;letter-spacing:4px;">HAMMES AGENT · CREDITWIKI</p>
+    <h1 style="margin:24px 0 0;color:#FFFFFF;font-size:56px;font-weight:bold;line-height:1.2;">CreditWiki 知识库构建总结</h1>
+    <p style="margin:20px 0 0;color:#8C8C8C;font-size:20px;">从信贷审查到智能报告的完整工具链</p>
+    <div style="margin-top:60px;display:flex;gap:40px;color:#8C8C8C;font-size:13px;">
+      <span>2026年4月21日</span>
+      <span style="color:#1B5AB5;">|</span>
+      <span>银行信贷知识库</span>
+    </div>
+  </div>
+  <svg style="position:absolute;right:32px;bottom:24px;" width="36" height="36" viewBox="0 0 36 36">
+    <circle cx="18" cy="18" r="18" fill="#1B5AB5"/>
+    <text x="18" y="18" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="600" fill="#ffffff">1</text>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 2: EXECUTIVE SUMMARY                  -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="slide-content">
+  <div style="position:absolute;left:0;top:0;width:960px;height:32px;background:#0B1F3A;display:flex;align-items:center;justify-content:space-between;padding:0 26px;box-sizing:border-box;">
+    <h1 style="margin:0;color:#FFFFFF;font-family:Arial Black,sans-serif;font-size:22px;">核心成果概览</h1>
+    <span style="color:#FFFFFF;font-size:13px;">2</span>
+  </div>
+  <div style="position:absolute;left:26px;top:42px;color:#1B5AB5;font-weight:bold;font-size:15px;">
+    CreditWiki 知识库体系已完成全链路构建，覆盖信号获取→分析→报告全流程
+  </div>
+
+  <!-- 4 stat boxes -->
+  <div style="position:absolute;left:26px;top:75px;width:200px;height:100px;background:#F5F7FA;border-left:3px solid #1B5AB5;">
+    <p style="margin:0 0 0 12px;padding-top:12px;font-size:32px;font-weight:bold;color:#1B5AB5;">6</p>
+    <p style="margin:4px 0 0 12px;font-size:12px;color:#2D2D2D;font-weight:bold;">核心技能模块</p>
+    <p style="margin:2px 0 0 12px;font-size:11px;color:#8C8C8C;">credit-review 等</p>
+  </div>
+  <div style="position:absolute;left:246px;top:75px;width:200px;height:100px;background:#F5F7FA;border-left:3px solid #2E8BC0;">
+    <p style="margin:0 0 0 12px;padding-top:12px;font-size:32px;font-weight:bold;color:#2E8BC0;">4</p>
+    <p style="margin:4px 0 0 12px;font-size:12px;color:#2D2D2D;font-weight:bold;">数据接口集成</p>
+    <p style="margin:2px 0 0 12px;font-size:11px;color:#8C8C8C;">新浪财经·Tushare</p>
+  </div>
+  <div style="position:absolute;left:466px;top:75px;width:200px;height:100px;background:#F5F7FA;border-left:3px solid #3AAF6C;">
+    <p style="margin:0 0 0 12px;padding-top:12px;font-size:32px;font-weight:bold;color:#3AAF6C;">3</p>
+    <p style="margin:4px 0 0 12px;font-size:12px;color:#2D2D2D;font-weight:bold;">报告输出格式</p>
+    <p style="margin:2px 0 0 12px;font-size:11px;color:#8C8C8C;">Markdown·Word·PPT</p>
+  </div>
+  <div style="position:absolute;left:686px;top:75px;width:200px;height:100px;background:#F5F7FA;border-left:3px solid #D4A843;">
+    <p style="margin:0 0 0 12px;padding-top:12px;font-size:32px;font-weight:bold;color:#D4A843;">8</p>
+    <p style="margin:4px 0 0 12px;font-size:12px;color:#2D2D2D;font-weight:bold;">信贷审查模块</p>
+    <p style="margin:2px 0 0 12px;font-size:11px;color:#8C8C8C;">企业→财务→授信</p>
+  </div>
+
+  <!-- Bottom key findings -->
+  <div style="position:absolute;left:26px;top:195px;width:870px;height:290px;">
+    <p style="margin:0 0 10px;font-size:12px;color:#1B5AB5;font-weight:bold;">关键建设成果</p>
+    <div style="display:flex;gap:20px;height:130px;margin-bottom:15px;">
+      <div style="flex:1;background:#F5F7FA;padding:12px 14px;border-top:3px solid #1B5AB5;">
+        <p style="margin:0 0 6px;font-size:12px;color:#1B5AB5;font-weight:bold;">📋 信贷审查技能</p>
+        <p style="margin:0;font-size:10px;color:#2D2D2D;line-height:1.5;">credit-review 技能完成设计，包含企业画像、公司治理、实控人分析、主营业务、财务分析、融资信息、授信建议、审查结论8大模块</p>
+      </div>
+      <div style="flex:1;background:#F5F7FA;padding:12px 14px;border-top:3px solid #2E8BC0;">
+        <p style="margin:0 0 6px;font-size:12px;color:#2E8BC0;font-weight:bold;">📡 数据聚合引擎</p>
+        <p style="margin:0;font-size:10px;color:#2D2D2D;line-height:1.5;">credit-review.py 集成新浪财经 HQ API + Tushare 财务数据，破解东财反爬限制，支持实时行情与历史财务指标</p>
+      </div>
+      <div style="flex:1;background:#F5F7FA;padding:12px 14px;border-top:3px solid #3AAF6C;">
+        <p style="margin:0 0 6px;font-size:12px;color:#3AAF6C;font-weight:bold;">📄 Word 报告生成</p>
+        <p style="margin:0;font-size:10px;color:#2D2D2D;line-height:1.5;">DocForge C# 项目完成 net10.0 适配，CreditReviewReport 模板注册成功，首份 Word 报告已生成（9.2KB）</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:20px;height:110px;">
+      <div style="flex:1;background:#F5F7FA;padding:12px 14px;border-top:3px solid #D4A843;">
+        <p style="margin:0 0 6px;font-size:12px;color:#D4A843;font-weight:bold;">📊 PPT 技能</p>
+        <p style="margin:0;font-size:10px;color:#2D2D2D;line-height:1.5;">biz-minimal-ppt 商务简约融合风技能完成，支持多样化背景图（渐变+网络图片），9种幻灯片类型，今日演示生成45KB PPT</p>
+      </div>
+      <div style="flex:1;background:#F5F7FA;padding:12px 14px;border-top:3px solid #7B6D9E;">
+        <p style="margin:0 0 6px;font-size:12px;color:#7B6D9E;font-weight:bold;">🏗️ 工具链架构</p>
+        <p style="margin:0;font-size:10px;color:#2D2D2D;line-height:1.5;">Hermes Agent 自动化执行：信号获取(akshare/新浪)→分析(AI)→报告(MD/DOCX/PPT)→归档(CreditWiki)，全流程闭环</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:absolute;bottom:0;left:0;right:0;height:21px;padding:0 26px;display:flex;align-items:center;border-top:1px solid #E0E0E0;">
+    <p style="margin:0;font-size:8px;color:#8C8C8C;">Source: CreditWiki Build Log | 2026年4月21日 | 仅供内部使用</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 3: AGENDA                             -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="slide-content">
+  <div style="position:absolute;left:0;top:0;width:960px;height:32px;background:#0B1F3A;display:flex;align-items:center;justify-content:space-between;padding:0 26px;box-sizing:border-box;">
+    <h1 style="margin:0;color:#FFFFFF;font-family:Arial Black,sans-serif;font-size:22px;">汇报议程</h1>
+    <span style="color:#FFFFFF;font-size:13px;">3</span>
+  </div>
+  <div style="position:absolute;left:26px;top:42px;color:#1B5AB5;font-weight:bold;font-size:15px;">
+    今天的核心议题：知识库的架构设计与全模块能力展示
+  </div>
+
+  <div style="position:absolute;left:26px;top:80px;width:880px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid #E0E0E0;">
+        <span style="font-size:28px;font-weight:bold;color:#1B5AB5;min-width:36px;">01</span>
+        <div>
+          <p style="margin:0 0 4px;font-size:14px;font-weight:bold;color:#2D2D2D;">项目背景与目标</p>
+          <p style="margin:0;font-size:11px;color:#8C8C8C;line-height:1.4;">Hermes Agent × 银行信贷，工具链整合与效率提升</p>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid #E0E0E0;">
+        <span style="font-size:28px;font-weight:bold;color:#2E8BC0;min-width:36px;">02</span>
+        <div>
+          <p style="margin:0 0 4px;font-size:14px;font-weight:bold;color:#2D2D2D;">数据接口方案</p>
+          <p style="margin:0;font-size:11px;color:#8C8C8C;line-height:1.4;">新浪财经 HQ API + Tushare，破解反爬实现稳定获取</p>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid #E0E0E0;">
+        <span style="font-size:28px;font-weight:bold;color:#3AAF6C;min-width:36px;">03</span>
+        <div>
+          <p style="margin:0 0 4px;font-size:14px;font-weight:bold;color:#2D2D2D;">信贷审查技能设计</p>
+          <p style="margin:0;font-size:11px;color:#8C8C8C;line-height:1.4;">8大模块闭环，覆盖企业→治理→实控人→主营→融资→财务→授信→结论</p>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid #E0E0E0;">
+        <span style="font-size:28px;font-weight:bold;color:#D4A843;min-width:36px;">04</span>
+        <div>
+          <p style="margin:0 0 4px;font-size:14px;font-weight:bold;color:#2D2D2D;">Word 报告生成</p>
+          <p style="margin:0;font-size:11px;color:#8C8C8C;line-height:1.4;">DocForge C# + OpenXML，信贷审查专用模板，风险雷达图+多表格</p>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid #E0E0E0;">
+        <span style="font-size:28px;font-weight:bold;color:#E05252;min-width:36px;">05</span>
+        <div>
+          <p style="margin:0 0 4px;font-size:14px;font-weight:bold;color:#2D2D2D;">商务简约PPT技能</p>
+          <p style="margin:0;font-size:11px;color:#8C8C8C;line-height:1.4;">biz-minimal-ppt 融合商务+简约，支持多样化背景图</p>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid #E0E0E0;">
+        <span style="font-size:28px;font-weight:bold;color:#7B6D9E;min-width:36px;">06</span>
+        <div>
+          <p style="margin:0 0 4px;font-size:14px;font-weight:bold;color:#2D2D2D;">Demo 演示与成果</p>
+          <p style="margin:0;font-size:11px;color:#8C8C8C;line-height:1.4;">上海赞禾英泰信贷审查报告 + 银行数字化转型PPT</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:absolute;bottom:0;left:0;right:0;height:21px;padding:0 26px;display:flex;align-items:center;border-top:1px solid #E0E0E0;">
+    <p style="margin:0;font-size:8px;color:#8C8C8C;">Source: CreditWiki Build Summary | 2026年4月21日</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 4: DATA PIPELINE                      -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="slide-content">
+  <div style="position:absolute;left:0;top:0;width:960px;height:32px;background:#0B1F3A;display:flex;align-items:center;justify-content:space-between;padding:0 26px;box-sizing:border-box;">
+    <h1 style="margin:0;color:#FFFFFF;font-family:Arial Black,sans-serif;font-size:22px;">数据接口方案：信号获取的稳定性挑战</h1>
+    <span style="color:#FFFFFF;font-size:13px;">4</span>
+  </div>
+  <div style="position:absolute;left:26px;top:42px;color:#1B5AB5;font-weight:bold;font-size:15px;">
+    东财反爬阻断后，成功切换新浪财经 HQ API 实现稳定获取，破解核心瓶颈
+  </div>
+
+  <!-- Left: problem & solution -->
+  <div style="position:absolute;left:26px;top:78px;width:440px;height:380px;">
+    <p style="margin:0 0 10px;font-size:12px;color:#8C8C8C;font-weight:bold;">方案对比</p>
+    <div style="background:#F5F7FA;padding:12px 14px;margin-bottom:10px;border-left:3px solid #E05252;">
+      <p style="margin:0 0 6px;font-size:12px;color:#E05252;font-weight:bold;">❌ 方案A：东方财富 akshare</p>
+      <p style="margin:0;font-size:10px;color:#2D2D2D;line-height:1.5;">akshare 直接调用东财接口，被反爬机制阻断，数据获取不稳定，频繁失败</p>
+    </div>
+    <div style="background:#F5F7FA;padding:12px 14px;margin-bottom:14px;border-left:3px solid #3AAF6C;">
+      <p style="margin:0 0 6px;font-size:12px;color:#3AAF6C;font-weight:bold;">✅ 方案B：新浪财经 HQ API</p>
+      <p style="margin:0;font-size:10px;color:#2D2D2D;line-height:1.5;">hq.sinajs.cn 接口，GBK 解码，支持沪深全量股票，支持兴业、招行等银行实时行情</p>
+    </div>
+
+    <p style="margin:0 0 10px;font-size:12px;color:#8C8C8C;font-weight:bold;">集成数据源</p>
+    <table style="width:100%;border-collapse:collapse;font-size:10px;">
+      <thead>
+        <tr style="background:#0B1F3A;color:#FFFFFF;">
+          <th style="padding:6px 10px;text-align:left;font-weight:bold;">数据源</th>
+          <th style="padding:6px 10px;text-align:left;font-weight:bold;">数据类型</th>
+          <th style="padding:6px 10px;text-align:left;font-weight:bold;">状态</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #E0E0E0;">
+          <td style="padding:6px 10px;color:#2D2D2D;">新浪财经 HQ</td>
+          <td style="padding:6px 10px;color:#2D2D2D;">实时行情</td>
+          <td style="padding:6px 10px;color:#3AAF6C;font-weight:bold;">✅ 稳定</td>
+        </tr>
+        <tr style="border-bottom:1px solid #E0E0E0;background:#F9F9F9;">
+          <td style="padding:6px 10px;color:#2D2D2D;">Tushare Pro</td>
+          <td style="padding:6px 10px;color:#2D2D2D;">PE/PB/财务</td>
+          <td style="padding:6px 10px;color:#3AAF6C;font-weight:bold;">✅ 稳定</td>
+        </tr>
+        <tr style="border-bottom:1px solid #E0E0E0;">
+          <td style="padding:6px 10px;color:#2D2D2D;">Bing 搜索</td>
+          <td style="padding:6px 10px;color:#2D2D2D;">公开信息</td>
+          <td style="padding:6px 10px;color:#D4A843;font-weight:bold;">⚠️ 辅助</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 10px;color:#2D2D2D;">爱企查/天眼查</td>
+          <td style="padding:6px 10px;color:#2D2D2D;">工商信息</td>
+          <td style="padding:6px 10px;color:#E05252;font-weight:bold;">❌ 需付费</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Right: pipeline flow -->
+  <div style="position:absolute;left:490px;top:78px;width:420px;height:380px;">
+    <p style="margin:0 0 10px;font-size:12px;color:#8C8C8C;font-weight:bold;">数据流程</p>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:#0B1F3A;color:#FFFFFF;padding:10px 14px;font-size:11px;font-weight:bold;width:200px;">📡 新浪财经 HQ API</div>
+      <div style="width:2px;height:16px;background:#1B5AB5;margin-left:104px;"></div>
+      <div style="background:#1B5AB5;color:#FFFFFF;padding:8px 14px;font-size:11px;width:280px;">🔧 Python 解析脚本</div>
+      <div style="width:2px;height:16px;background:#1B5AB5;margin-left:104px;"></div>
+      <div style="background:#F5F7FA;border:1px solid #E0E0E0;padding:8px 14px;font-size:11px;width:280px;color:#2D2D2D;">📊 字段：代码·名称·现价·涨跌·成交量·市值</div>
+      <div style="width:2px;height:16px;background:#1B5AB5;margin-left:104px;"></div>
+      <div style="background:#2E8BC0;color:#FFFFFF;padding:8px 14px;font-size:11px;width:280px;">📈 Tushare 补充财务数据</div>
+      <div style="width:2px;height:16px;background:#1B5AB5;margin-left:104px;"></div>
+      <div style="background:#3AAF6C;color:#FFFFFF;padding:8px 14px;font-size:11px;width:280px;">🤖 AI 分析引擎（Hermes）</div>
+      <div style="width:2px;height:16px;background:#1B5AB5;margin-left:104px;"></div>
+      <div style="background:#D4A843;color:#FFFFFF;padding:8px 14px;font-size:11px;width:280px;">📄 报告生成（MD/WORD/PPT）</div>
+    </div>
+  </div>
+
+  <div style="position:absolute;bottom:0;left:0;right:0;height:21px;padding:0 26px;display:flex;align-items:center;border-top:1px solid #E0E0E0;">
+    <p style="margin:0;font-size:8px;color:#8C8C8C;">Source: CreditWiki 技术方案 | 2026年4月21日 | 验证：兴业银行601166查询成功</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 5: CREDIT REVIEW SKILL                -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="slide-content">
+  <div style="position:absolute;left:0;top:0;width:960px;height:32px;background:#0B1F3A;display:flex;align-items:center;justify-content:space-between;padding:0 26px;box-sizing:border-box;">
+    <h1 style="margin:0;color:#FFFFFF;font-family:Arial Black,sans-serif;font-size:22px;">信贷审查技能：8大模块闭环</h1>
+    <span style="color:#FFFFFF;font-size:13px;">5</span>
+  </div>
+  <div style="position:absolute;left:26px;top:42px;color:#1B5AB5;font-weight:bold;font-size:15px;">
+    覆盖企业信号获取到授信建议的全流程，第一性原理驱动结构化分析
+  </div>
+
+  <!-- 8 module cards in 2 rows -->
+  <div style="position:absolute;left:26px;top:78px;width:880px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin-bottom:10px;">
+      <div style="background:#F5F7FA;padding:10px 12px;border-top:3px solid #1B5AB5;">
+        <p style="margin:0 0 4px;font-size:11px;color:#1B5AB5;font-weight:bold;">模块1</p>
+        <p style="margin:0 0 4px;font-size:12px;color:#2D2D2D;font-weight:bold;">企业基本信息</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">工商信息·成立时间·注册资本·经营状态·所属行业</p>
+      </div>
+      <div style="background:#F5F7FA;padding:10px 12px;border-top:3px solid #2E8BC0;">
+        <p style="margin:0 0 4px;font-size:11px;color:#2E8BC0;font-weight:bold;">模块2</p>
+        <p style="margin:0 0 4px;font-size:12px;color:#2D2D2D;font-weight:bold;">公司治理结构</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">股权结构·董事会构成·高管团队·关联企业·内控机制</p>
+      </div>
+      <div style="background:#F5F7FA;padding:10px 12px;border-top:3px solid #3AAF6C;">
+        <p style="margin:0 0 4px;font-size:11px;color:#3AAF6C;font-weight:bold;">模块3</p>
+        <p style="margin:0 0 4px;font-size:12px;color:#2D2D2D;font-weight:bold;">实控人分析</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">穿透核查·股权穿透图·背景调查·关联风险·政治风险</p>
+      </div>
+      <div style="background:#F5F7FA;padding:10px 12px;border-top:3px solid #D4A843;">
+        <p style="margin:0 0 4px;font-size:11px;color:#D4A843;font-weight:bold;">模块4</p>
+        <p style="margin:0 0 4px;font-size:12px;color:#2D2D2D;font-weight:bold;">主营业务分析</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">业务结构·收入占比·核心竞争力·行业地位·盈利模式</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin-bottom:14px;">
+      <div style="background:#F5F7FA;padding:10px 12px;border-top:3px solid #E05252;">
+        <p style="margin:0 0 4px;font-size:11px;color:#E05252;font-weight:bold;">模块5</p>
+        <p style="margin:0 0 4px;font-size:12px;color:#2D2D2D;font-weight:bold;">融资与对外担保</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">银行贷款·债券·非标·担保余额·授信额度·用信比例</p>
+      </div>
+      <div style="background:#F5F7FA;padding:10px 12px;border-top:3px solid #7B6D9E;">
+        <p style="margin:0 0 4px;font-size:11px;color:#7B6D9E;font-weight:bold;">模块6</p>
+        <p style="margin:0 0 4px;font-size:12px;color:#2D2D2D;font-weight:bold;">财务分析</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">资产负债表·利润表·现金流量·偿债能力·周转效率·盈利质量</p>
+      </div>
+      <div style="background:#F5F7FA;padding:10px 12px;border-top:3px solid #1B5AB5;">
+        <p style="margin:0 0 4px;font-size:11px;color:#1B5AB5;font-weight:bold;">模块7</p>
+        <p style="margin:0 0 4px;font-size:12px;color:#2D2D2D;font-weight:bold;">授信方案建议</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">额度建议·期限结构·利率定价·担保要求·用途管控·贷后管理</p>
+      </div>
+      <div style="background:#F5F7FA;padding:10px 12px;border-top:3px solid #2E8BC0;">
+        <p style="margin:0 0 4px;font-size:11px;color:#2E8BC0;font-weight:bold;">模块8</p>
+        <p style="margin:0 0 4px;font-size:12px;color:#2D2D2D;font-weight:bold;">审查结论</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">综合评分·风险等级·有条件推荐·否决·需补充材料</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom: case insight -->
+  <div style="position:absolute;left:26px;top:350px;width:880px;background:#0B1F3A;padding:14px 18px;">
+    <p style="margin:0 0 6px;font-size:12px;color:#D4A843;font-weight:bold;">📌 实战案例：上海赞禾英泰信息科技股份有限公司</p>
+    <p style="margin:0;font-size:11px;color:#E0E0E0;line-height:1.5;">通过credit-review技能完成全流程分析：综合评分 <span style="color:#D4A843;font-weight:bold;">4.2/10（中高风险）</span>，建议强化担保措施。报告已生成Word格式（9.2KB），输出至 CreditWiki/outputs/</p>
+  </div>
+
+  <div style="position:absolute;bottom:0;left:0;right:0;height:21px;padding:0 26px;display:flex;align-items:center;border-top:1px solid #E0E0E0;">
+    <p style="margin:0;font-size:8px;color:#8C8C8C;">Source: CreditWiki credit-review Skill | 2026年4月21日</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 6: WORD REPORT                         -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="slide-content">
+  <div style="position:absolute;left:0;top:0;width:960px;height:32px;background:#0B1F3A;display:flex;align-items:center;justify-content:space-between;padding:0 26px;box-sizing:border-box;">
+    <h1 style="margin:0;color:#FFFFFF;font-family:Arial Black,sans-serif;font-size:22px;">Word 报告生成：DocForge + OpenXML</h1>
+    <span style="color:#FFFFFF;font-size:13px;">6</span>
+  </div>
+  <div style="position:absolute;left:26px;top:42px;color:#1B5AB5;font-weight:bold;font-size:15px;">
+    DocForge C# 项目完成 net10.0 适配，信贷审查专用模板已注册，首份报告已产出
+  </div>
+
+  <!-- Left: tech stack -->
+  <div style="position:absolute;left:26px;top:78px;width:440px;height:380px;">
+    <p style="margin:0 0 10px;font-size:12px;color:#8C8C8C;font-weight:bold;">技术架构</p>
+    <div style="background:#F5F7FA;padding:12px 14px;margin-bottom:10px;border-left:3px solid #1B5AB5;">
+      <p style="margin:0 0 6px;font-size:12px;color:#1B5AB5;font-weight:bold;">DocForge C# 项目</p>
+      <p style="margin:0;font-size:10px;color:#2D2D2D;line-height:1.5;">基于 .NET + OpenXML SDK 生成标准 .docx 文件，支持页眉页脚、表格、图表、样式模板</p>
+    </div>
+    <div style="background:#F5F7FA;padding:12px 14px;margin-bottom:10px;border-left:3px solid #2E8BC0;">
+      <p style="margin:0 0 6px;font-size:12px;color:#2E8BC0;font-weight:bold;">CreditReviewReport 模板</p>
+      <p style="margin:0;font-size:10px;color:#2D2D2D;line-height:1.5;">信贷审查专用样式：封面（含Logo位+风险等级标签）+ 风险雷达图 + 多表格 + 结论页</p>
+    </div>
+    <div style="background:#F5F7FA;padding:12px 14px;border-left:3px solid #3AAF6C;">
+      <p style="margin:0 0 6px;font-size:12px;color:#3AAF6C;font-weight:bold;">Program.cs 分支注册</p>
+      <p style="margin:0;font-size:10px;color:#2D2D2D;line-height:1.5;">RunCreditReview() 函数已注册至 Program.cs，命令行分支 'credit-review' 已激活</p>
+    </div>
+
+    <!-- Fixes table -->
+    <p style="margin:14px 0 8px;font-size:12px;color:#8C8C8C;font-weight:bold;">修复历程</p>
+    <table style="width:100%;border-collapse:collapse;font-size:10px;">
+      <thead>
+        <tr style="background:#0B1F3A;color:#FFFFFF;">
+          <th style="padding:5px 8px;text-align:left;">问题</th>
+          <th style="padding:5px 8px;text-align:left;">修复</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #E0E0E0;">
+          <td style="padding:5px 8px;color:#2D2D2D;">net9.0 vs net10.0</td>
+          <td style="padding:5px 8px;color:#3AAF6C;">DocForge.csproj 改为 net10.0</td>
+        </tr>
+        <tr style="border-bottom:1px solid #E0E0E0;background:#F9F9F9;">
+          <td style="padding:5px 8px;color:#2D2D2D;">HeaderCell() 返回类型</td>
+          <td style="padding:5px 8px;color:#3AAF6C;">TableRow → TableCell</td>
+        </tr>
+        <tr>
+          <td style="padding:5px 8px;color:#2D2D2D;">DataCell() 返回类型</td>
+          <td style="padding:5px 8px;color:#3AAF6C;">TableRow → TableCell</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Right: command & output -->
+  <div style="position:absolute;left:490px;top:78px;width:420px;height:380px;">
+    <p style="margin:0 0 10px;font-size:12px;color:#8C8C8C;font-weight:bold;">生成命令</p>
+    <div style="background:#1A1A2E;color:#E0E0E0;padding:12px 14px;font-family:Courier New;font-size:11px;line-height:1.6;margin-bottom:14px;">
+      dotnet run --project DocForge.csproj<br>
+      -- credit-review<br>
+      &lt;output.docx&gt;<br>
+      &lt;source.md&gt;
+    </div>
+
+    <p style="margin:0 0 10px;font-size:12px;color:#8C8C8C;font-weight:bold;">输出成果</p>
+    <div style="background:#F5F7FA;padding:12px 14px;margin-bottom:10px;border-left:3px solid #D4A843;">
+      <p style="margin:0 0 4px;font-size:12px;color:#2D2D2D;font-weight:bold;">信贷审查_上海赞禾英泰...20260421.docx</p>
+      <p style="margin:0;font-size:10px;color:#8C8C8C;">9.2KB · 已验证可打开 · 包含8模块完整内容</p>
+    </div>
+    <div style="background:#F5F7FA;padding:12px 14px;border-left:3px solid #3AAF6C;">
+      <p style="margin:0 0 6px;font-size:12px;color:#2D2D2D;font-weight:bold;">文件路径</p>
+      <p style="margin:0;font-size:10px;color:#8C8C8C;word-break:break-all;">/Users/bismarck/KnowledgeBase/CreditWiki/outputs/</p>
+    </div>
+  </div>
+
+  <div style="position:absolute;bottom:0;left:0;right:0;height:21px;padding:0 26px;display:flex;align-items:center;border-top:1px solid #E0E0E0;">
+    <p style="margin:0;font-size:8px;color:#8C8C8C;">Source: DocForge C# Project | 2026年4月21日</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 7: BIZ-MINIMAL PPT SKILL               -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="slide-content">
+  <div style="position:absolute;left:0;top:0;width:960px;height:32px;background:#0B1F3A;display:flex;align-items:center;justify-content:space-between;padding:0 26px;box-sizing:border-box;">
+    <h1 style="margin:0;color:#FFFFFF;font-family:Arial Black,sans-serif;font-size:22px;">商务简约融合风 PPT 技能</h1>
+    <span style="color:#FFFFFF;font-size:13px;">7</span>
+  </div>
+  <div style="position:absolute;left:26px;top:42px;color:#1B5AB5;font-weight:bold;font-size:15px;">
+    biz-minimal-ppt 技能：聚合商务专业感与简约现代感，多样化背景图片（核心差异化）
+  </div>
+
+  <!-- Left: style features -->
+  <div style="position:absolute;left:26px;top:78px;width:420px;height:380px;">
+    <p style="margin:0 0 10px;font-size:12px;color:#8C8C8C;font-weight:bold;">风格融合：商务 × 简约</p>
+    <table style="width:100%;border-collapse:collapse;font-size:10px;margin-bottom:14px;">
+      <thead>
+        <tr style="background:#0B1F3A;color:#FFFFFF;">
+          <th style="padding:6px 10px;text-align:left;">维度</th>
+          <th style="padding:6px 10px;text-align:left;">商务</th>
+          <th style="padding:6px 10px;text-align:left;">简约</th>
+          <th style="padding:6px 10px;text-align:left;">融合结果</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #E0E0E0;">
+          <td style="padding:6px 10px;color:#2D2D2D;font-weight:bold;">色彩</td>
+          <td style="padding:6px 10px;color:#2D2D2D;">深蓝/藏青</td>
+          <td style="padding:6px 10px;color:#2D2D2D;">大量留白</td>
+          <td style="padding:6px 10px;color:#1B5AB5;font-weight:bold;">藏青+纯白+灰调</td>
+        </tr>
+        <tr style="border-bottom:1px solid #E0E0E0;background:#F9F9F9;">
+          <td style="padding:6px 10px;color:#2D2D2D;font-weight:bold;">布局</td>
+          <td style="padding:6px 10px;color:#2D2D2D;">信息密集</td>
+          <td style="padding:6px 10px;color:#2D2D2D;">宽松留白</td>
+          <td style="padding:6px 10px;color:#1B5AB5;font-weight:bold;">卡片+左重右轻</td>
+        </tr>
+        <tr style="border-bottom:1px solid #E0E0E0;">
+          <td style="padding:6px 10px;color:#2D2D2D;font-weight:bold;">背景</td>
+          <td style="padding:6px 10px;color:#2D2D2D;">纯色/渐变</td>
+          <td style="padding:6px 10px;color:#2D2D2D;">大量留白</td>
+          <td style="padding:6px 10px;color:#1B5AB5;font-weight:bold;">✅多样化背景图</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 10px;color:#2D2D2D;font-weight:bold;">视觉</td>
+          <td style="padding:6px 10px;color:#2D2D2D;">数据图表</td>
+          <td style="padding:6px 10px;color:#2D2D2D;">图形化</td>
+          <td style="padding:6px 10px;color:#1B5AB5;font-weight:bold;">图表+图标双驱动</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin:0 0 8px;font-size:12px;color:#8C8C8C;font-weight:bold;">背景图策略（关键差异化）</p>
+    <div style="background:#F5F7FA;padding:10px 12px;margin-bottom:8px;border-left:3px solid #1B5AB5;">
+      <p style="margin:0 0 4px;font-size:11px;color:#1B5AB5;font-weight:bold;">方案A：Unsplash Source（推荐）</p>
+      <p style="margin:0;font-size:10px;color:#2D2D2D;">抽象几何/城市建筑/渐变色块，关键词随机，无需API Key</p>
+    </div>
+    <div style="background:#F5F7FA;padding:10px 12px;margin-bottom:8px;border-left:3px solid #2E8BC0;">
+      <p style="margin:0 0 4px;font-size:11px;color:#2E8BC0;font-weight:bold;">方案B：Picsum Photos</p>
+      <p style="margin:0;font-size:10px;color:#2D2D2D;">随机但固定种子，风景/纹理/建筑</p>
+    </div>
+    <div style="background:#F5F7FA;padding:10px 12px;border-left:3px solid #3AAF6C;">
+      <p style="margin:0 0 4px;font-size:11px;color:#3AAF6C;font-weight:bold;">方案C：程序渐变（零依赖）</p>
+      <p style="margin:0;font-size:10px;color:#2D2D2D;">Pillow 生成垂直渐变（藏青→钢蓝），离线可用</p>
+    </div>
+  </div>
+
+  <!-- Right: slide types -->
+  <div style="position:absolute;left:470px;top:78px;width:436px;height:380px;">
+    <p style="margin:0 0 10px;font-size:12px;color:#8C8C8C;font-weight:bold;">9种幻灯片类型</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+      <div style="background:#F5F7FA;padding:8px 10px;">
+        <p style="margin:0 0 2px;font-size:11px;color:#1B5AB5;font-weight:bold;">封面页</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">深色渐变背景+居中大标题</p>
+      </div>
+      <div style="background:#F5F7FA;padding:8px 10px;">
+        <p style="margin:0 0 2px;font-size:11px;color:#2E8BC0;font-weight:bold;">目录页</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">左侧藏青色块+章节列表</p>
+      </div>
+      <div style="background:#F5F7FA;padding:8px 10px;">
+        <p style="margin:0 0 2px;font-size:11px;color:#3AAF6C;font-weight:bold;">左重右轻</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">要点+右侧数据卡片/图表</p>
+      </div>
+      <div style="background:#F5F7FA;padding:8px 10px;">
+        <p style="margin:0 0 2px;font-size:11px;color:#D4A843;font-weight:bold;">卡片式</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">多色图标卡片网格(2~6张)</p>
+      </div>
+      <div style="background:#F5F7FA;padding:8px 10px;">
+        <p style="margin:0 0 2px;font-size:11px;color:#E05252;font-weight:bold;">图表页</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">模拟柱状图+来源注释</p>
+      </div>
+      <div style="background:#F5F7FA;padding:8px 10px;">
+        <p style="margin:0 0 2px;font-size:11px;color:#7B6D9E;font-weight:bold;">大数字</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">深色背景+金橙色大数字</p>
+      </div>
+      <div style="background:#F5F7FA;padding:8px 10px;">
+        <p style="margin:0 0 2px;font-size:11px;color:#1B5AB5;font-weight:bold;">对比页</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">双栏VS样式卡片</p>
+      </div>
+      <div style="background:#F5F7FA;padding:8px 10px;">
+        <p style="margin:0 0 2px;font-size:11px;color:#2E8BC0;font-weight:bold;">时间轴</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">横向节点流程图</p>
+      </div>
+      <div style="background:#0B1F3A;padding:8px 10px;grid-column:1 / -1;">
+        <p style="margin:0 0 2px;font-size:11px;color:#D4A843;font-weight:bold;">总结页</p>
+        <p style="margin:0;font-size:10px;color:#E0E0E0;">深色背景+勾选要点+结论框（与封面呼应）</p>
+      </div>
+    </div>
+
+    <div style="margin-top:10px;background:#F5F7FA;padding:10px 12px;border-left:3px solid #1B5AB5;">
+      <p style="margin:0 0 4px;font-size:11px;color:#1B5AB5;font-weight:bold;">Demo 验证</p>
+      <p style="margin:0;font-size:10px;color:#2D2D2D;">银行数字化转型报告 PPT · 8页 · 45KB · 路径：CreditWiki/outputs/</p>
+    </div>
+  </div>
+
+  <div style="position:absolute;bottom:0;left:0;right:0;height:21px;padding:0 26px;display:flex;align-items:center;border-top:1px solid #E0E0E0;">
+    <p style="margin:0;font-size:8px;color:#8C8C8C;">Source: biz-minimal-ppt Skill | 2026年4月21日</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 8: TOOLCHAIN OVERVIEW                  -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="slide-content">
+  <div style="position:absolute;left:0;top:0;width:960px;height:32px;background:#0B1F3A;display:flex;align-items:center;justify-content:space-between;padding:0 26px;box-sizing:border-box;">
+    <h1 style="margin:0;color:#FFFFFF;font-family:Arial Black,sans-serif;font-size:22px;">完整工具链架构</h1>
+    <span style="color:#FFFFFF;font-size:13px;">8</span>
+  </div>
+  <div style="position:absolute;left:26px;top:42px;color:#1B5AB5;font-weight:bold;font-size:15px;">
+    从信号获取 → AI分析 → 多格式报告 → 知识库归档，全流程自动化闭环
+  </div>
+
+  <!-- Pipeline boxes -->
+  <div style="position:absolute;left:26px;top:80px;width:880px;height:60px;">
+    <div style="display:flex;align-items:center;gap:0;height:60px;">
+      <div style="flex:1;background:#1B5AB5;height:60px;display:flex;flex-direction:column;justify-content:center;padding:0 14px;">
+        <p style="margin:0;font-size:12px;color:#FFFFFF;font-weight:bold;">📡 信号获取</p>
+        <p style="margin:2px 0 0;font-size:10px;color:#E0E0E0;">新浪财经 HQ API</p>
+        <p style="margin:2px 0 0;font-size:10px;color:#E0E0E0;">Tushare 财务数据</p>
+      </div>
+      <div style="width:24px;height:2px;background:#1B5AB5;flex:none;"></div>
+      <div style="width:24px;height:24px;background:#1B5AB5;flex:none;display:flex;align-items:center;justify-content:center;font-size:14px;color:#FFF;">→</div>
+      <div style="width:24px;height:2px;background:#1B5AB5;flex:none;"></div>
+      <div style="flex:1;background:#2E8BC0;height:60px;display:flex;flex-direction:column;justify-content:center;padding:0 14px;">
+        <p style="margin:0;font-size:12px;color:#FFFFFF;font-weight:bold;">🤖 AI 分析引擎</p>
+        <p style="margin:2px 0 0;font-size:10px;color:#E0E0E0;">Hermes Agent</p>
+        <p style="margin:2px 0 0;font-size:10px;color:#E0E0E0;">第一性原理+辩证思维</p>
+      </div>
+      <div style="width:24px;height:2px;background:#2E8BC0;flex:none;"></div>
+      <div style="width:24px;height:24px;background:#2E8BC0;flex:none;display:flex;align-items:center;justify-content:center;font-size:14px;color:#FFF;">→</div>
+      <div style="width:24px;height:2px;background:#2E8BC0;flex:none;"></div>
+      <div style="flex:1;background:#3AAF6C;height:60px;display:flex;flex-direction:column;justify-content:center;padding:0 14px;">
+        <p style="margin:0;font-size:12px;color:#FFFFFF;font-weight:bold;">📋 报告生成</p>
+        <p style="margin:2px 0 0;font-size:10px;color:#E0E0E0;">Markdown · Word · PPT</p>
+        <p style="margin:2px 0 0;font-size:10px;color:#E0E0E0;">DocForge + python-pptx</p>
+      </div>
+      <div style="width:24px;height:2px;background:#3AAF6C;flex:none;"></div>
+      <div style="width:24px;height:24px;background:#3AAF6C;flex:none;display:flex;align-items:center;justify-content:center;font-size:14px;color:#FFF;">→</div>
+      <div style="width:24px;height:2px;background:#3AAF6C;flex:none;"></div>
+      <div style="flex:1;background:#D4A843;height:60px;display:flex;flex-direction:column;justify-content:center;padding:0 14px;">
+        <p style="margin:0;font-size:12px;color:#FFFFFF;font-weight:bold;">📚 知识库归档</p>
+        <p style="margin:2px 0 0;font-size:10px;color:#E0E0E0;">CreditWiki</p>
+        <p style="margin:2px 0 0;font-size:10px;color:#E0E0E0;">/KnowledgeBase/CreditWiki</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 skill cards -->
+  <div style="position:absolute;left:26px;top:155px;width:880px;">
+    <p style="margin:0 0 10px;font-size:12px;color:#8C8C8C;font-weight:bold;">核心技能矩阵</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;">
+      <div style="background:#F5F7FA;padding:12px 14px;border-top:3px solid #1B5AB5;">
+        <p style="margin:0 0 6px;font-size:12px;color:#1B5AB5;font-weight:bold;">credit-review</p>
+        <p style="margin:0 0 4px;font-size:10px;color:#2D2D2D;">银行信贷审查技能</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">8大模块 · 上市公司与非上市公司双模式</p>
+      </div>
+      <div style="background:#F5F7FA;padding:12px 14px;border-top:3px solid #2E8BC0;">
+        <p style="margin:0 0 6px;font-size:12px;color:#2E8BC0;font-weight:bold;">url-to-knowledge</p>
+        <p style="margin:0 0 4px;font-size:10px;color:#2D2D2D;">链接→知识库归档</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">抓取→分析→归档，双写新旧知识库</p>
+      </div>
+      <div style="background:#F5F7FA;padding:12px 14px;border-top:3px solid #3AAF6C;">
+        <p style="margin:0 0 6px;font-size:12px;color:#3AAF6C;font-weight:bold;">biz-minimal-ppt</p>
+        <p style="margin:0 0 4px;font-size:10px;color:#2D2D2D;">商务简约风PPT生成</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">多样化背景图 · 9种幻灯片类型</p>
+      </div>
+      <div style="background:#F5F7FA;padding:12px 14px;border-top:3px solid #D4A843;">
+        <p style="margin:0 0 6px;font-size:12px;color:#D4A843;font-weight:bold;">minimax-docx</p>
+        <p style="margin:0 0 4px;font-size:10px;color:#2D2D2D;">Word文档生成</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">DocForge C# · OpenXML · 信贷专用模板</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Output formats -->
+  <div style="position:absolute;left:26px;top:325px;width:880px;">
+    <p style="margin:0 0 10px;font-size:12px;color:#8C8C8C;font-weight:bold;">今日输出成果</p>
+    <div style="display:flex;gap:10px;height:140px;">
+      <div style="flex:1;background:#F5F7FA;padding:10px 12px;border-left:3px solid #1B5AB5;">
+        <p style="margin:0 0 6px;font-size:11px;color:#1B5AB5;font-weight:bold;">📄 Markdown 报告</p>
+        <p style="margin:0 0 4px;font-size:10px;color:#2D2D2D;">信贷审查_上海赞禾英泰..._20260421.md</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">CreditWiki/outputs/</p>
+      </div>
+      <div style="flex:1;background:#F5F7FA;padding:10px 12px;border-left:3px solid #2E8BC0;">
+        <p style="margin:0 0 6px;font-size:11px;color:#2E8BC0;font-weight:bold;">📝 Word 报告</p>
+        <p style="margin:0 0 4px;font-size:10px;color:#2D2D2D;">信贷审查_上海赞禾英泰..._20260421.docx</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">9.2KB · DocForge生成</p>
+      </div>
+      <div style="flex:1;background:#F5F7FA;padding:10px 12px;border-left:3px solid #3AAF6C;">
+        <p style="margin:0 0 6px;font-size:11px;color:#3AAF6C;font-weight:bold;">📊 PPT 演示</p>
+        <p style="margin:0 0 4px;font-size:10px;color:#2D2D2D;">银行数字化转型报告_Demo.pptx</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">45KB · biz-minimal-ppt</p>
+      </div>
+      <div style="flex:1;background:#0B1F3A;padding:10px 12px;">
+        <p style="margin:0 0 6px;font-size:11px;color:#D4A843;font-weight:bold;">🏆 本PPT</p>
+        <p style="margin:0 0 4px;font-size:10px;color:#E0E0E0;">知识库构建总结_麦肯锡风格</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">10页 · CreditWiki/outputs/</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:absolute;bottom:0;left:0;right:0;height:21px;padding:0 26px;display:flex;align-items:center;border-top:1px solid #E0E0E0;">
+    <p style="margin:0;font-size:8px;color:#8C8C8C;">Source: CreditWiki System Architecture | 2026年4月21日</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 9: KEY INSIGHTS                        -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="slide-content">
+  <div style="position:absolute;left:0;top:0;width:960px;height:32px;background:#0B1F3A;display:flex;align-items:center;justify-content:space-between;padding:0 26px;box-sizing:border-box;">
+    <h1 style="margin:0;color:#FFFFFF;font-family:Arial Black,sans-serif;font-size:22px;">核心洞察与方法论</h1>
+    <span style="color:#FFFFFF;font-size:13px;">9</span>
+  </div>
+  <div style="position:absolute;left:26px;top:42px;color:#1B5AB5;font-weight:bold;font-size:15px;">
+    从实践中提炼的三大原则：数据先行、工具链闭环、第一性原理
+  </div>
+
+  <!-- 3 insight columns -->
+  <div style="position:absolute;left:26px;top:78px;width:280px;height:380px;">
+    <div style="background:#0B1F3A;height:6px;margin-bottom:12px;"></div>
+    <p style="margin:0 0 8px;font-size:14px;color:#0B1F3A;font-weight:bold;">洞察一：数据获取是根本</p>
+    <p style="margin:0 0 10px;font-size:11px;color:#8C8C8C;">反爬困境中的替代方案思维</p>
+    <div style="background:#F5F7FA;padding:10px 12px;margin-bottom:10px;">
+      <p style="margin:0 0 6px;font-size:11px;color:#2D2D2D;font-weight:bold;">❌ 单一依赖东财/akshare</p>
+      <p style="margin:0;font-size:10px;color:#8C8C8C;">被反爬阻断后无备用方案</p>
+    </div>
+    <div style="background:#F5F7FA;padding:10px 12px;margin-bottom:10px;">
+      <p style="margin:0 0 6px;font-size:11px;color:#2D2D2D;font-weight:bold;">✅ 多源冗余 + 降级策略</p>
+      <p style="margin:0;font-size:10px;color:#8C8C8C;">新浪财经 HQ → Picsum → 渐变图片</p>
+    </div>
+    <div style="background:#F5F7FA;padding:10px 12px;">
+      <p style="margin:0 0 6px;font-size:11px;color:#2D2D2D;font-weight:bold;">📌 原则</p>
+      <p style="margin:0;font-size:10px;color:#8C8C8C;">始终保留至少一层降级方案，网络图片失败时自动切换程序生成</p>
+    </div>
+  </div>
+
+  <div style="position:absolute;left:326px;top:78px;width:280px;height:380px;">
+    <div style="background:#1B5AB5;height:6px;margin-bottom:12px;"></div>
+    <p style="margin:0 0 8px;font-size:14px;color:#0B1F3A;font-weight:bold;">洞察二：工具链即壁垒</p>
+    <p style="margin:0 0 10px;font-size:11px;color:#8C8C8C;">从单点工具到系统集成的跃迁</p>
+    <div style="background:#F5F7FA;padding:10px 12px;margin-bottom:10px;">
+      <p style="margin:0 0 6px;font-size:11px;color:#2D2D2D;font-weight:bold;">❌ 散点工具</p>
+      <p style="margin:0;font-size:10px;color:#8C8C8C;">每次手动切换，数据格式不统一，效率瓶颈明显</p>
+    </div>
+    <div style="background:#F5F7FA;padding:10px 12px;margin-bottom:10px;">
+      <p style="margin:0 0 6px;font-size:11px;color:#2D2D2D;font-weight:bold;">✅ 闭环自动化</p>
+      <p style="margin:0;font-size:10px;color:#8C8C8C;">信号获取→AI分析→多格式报告→归档，全流程Agent驱动</p>
+    </div>
+    <div style="background:#F5F7FA;padding:10px 12px;">
+      <p style="margin:0 0 6px;font-size:11px;color:#2D2D2D;font-weight:bold;">📌 原则</p>
+      <p style="margin:0;font-size:10px;color:#8C8C8C;">工具链越长，替代成本越高，护城河越深</p>
+    </div>
+  </div>
+
+  <div style="position:absolute;left:626px;top:78px;width:280px;height:380px;">
+    <div style="background:#3AAF6C;height:6px;margin-bottom:12px;"></div>
+    <p style="margin:0 0 8px;font-size:14px;color:#0B1F3A;font-weight:bold;">洞察三：第一性原理设计</p>
+    <p style="margin:0 0 10px;font-size:11px;color:#8C8C8C;">信贷审查的8模块来自根本逻辑</p>
+    <div style="background:#F5F7FA;padding:10px 12px;margin-bottom:10px;">
+      <p style="margin:0 0 6px;font-size:11px;color:#2D2D2D;font-weight:bold;">❌ 模板套用</p>
+      <p style="margin:0;font-size:10px;color:#8C8C8C;">直接套用格式模板，不问为什么这样设计</p>
+    </div>
+    <div style="background:#F5F7FA;padding:10px 12px;margin-bottom:10px;">
+      <p style="margin:0 0 6px;font-size:11px;color:#2D2D2D;font-weight:bold;">✅ 逻辑自洽</p>
+      <p style="margin:0;font-size:10px;color:#8C8C8C;">从"银行信贷看什么"出发 → 企业→治理→实控人→主营→融资→财务→授信→结论</p>
+    </div>
+    <div style="background:#F5F7FA;padding:10px 12px;">
+      <p style="margin:0 0 6px;font-size:11px;color:#2D2D2D;font-weight:bold;">📌 原则</p>
+      <p style="margin:0;font-size:10px;color:#8C8C8C;">好的模块设计 = 模块间逻辑无遗漏、无重复、可独立使用</p>
+    </div>
+  </div>
+
+  <div style="position:absolute;bottom:0;left:0;right:0;height:21px;padding:0 26px;display:flex;align-items:center;border-top:1px solid #E0E0E0;">
+    <p style="margin:0;font-size:8px;color:#8C8C8C;">Source: 第一性原理 + 辩证法思维 | 2026年4月21日</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SLIDE 10: SUMMARY                             -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="slide-content" style="background:#0B1F3A;">
+  <div style="position:absolute;left:0;top:0;width:960px;height:32px;background:#0B1F3A;display:flex;align-items:center;justify-content:space-between;padding:0 26px;box-sizing:border-box;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <h1 style="margin:0;color:#FFFFFF;font-family:Arial Black,sans-serif;font-size:22px;">总结与下一步</h1>
+    <span style="color:#FFFFFF;font-size:13px;">10</span>
+  </div>
+
+  <div style="position:absolute;left:26px;top:50px;color:#FFFFFF;font-size:18px;font-weight:bold;">
+    CreditWiki 知识库体系已完整建立
+  </div>
+  <div style="position:absolute;left:26px;top:80px;color:#8C8C8C;font-size:13px;">
+    从信号获取到报告生成的完整工具链，为银行信贷工作提供全流程AI能力支撑
+  </div>
+
+  <!-- 4 key takeaways -->
+  <div style="position:absolute;left:26px;top:115px;width:880px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div style="background:rgba(255,255,255,0.07);padding:14px 16px;border-left:3px solid #1B5AB5;">
+        <p style="margin:0 0 8px;font-size:13px;color:#1B5AB5;font-weight:bold;">✅ 基础设施就绪</p>
+        <p style="margin:0;font-size:11px;color:#E0E0E0;line-height:1.5;">credit-review 技能、biz-minimal-ppt 技能、DocForge Word 生成器、数据聚合引擎全部就绪，可直接投入使用</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);padding:14px 16px;border-left:3px solid #2E8BC0;">
+        <p style="margin:0 0 8px;font-size:13px;color:#2E8BC0;font-weight:bold;">✅ 验证案例完成</p>
+        <p style="margin:0;font-size:11px;color:#E0E0E0;line-height:1.5;">上海赞禾英泰信贷审查报告（4.2/10）+ 银行数字化转型PPT，验证全流程可运行</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);padding:14px 16px;border-left:3px solid #3AAF6C;">
+        <p style="margin:0 0 8px;font-size:13px;color:#3AAF6C;font-weight:bold;">✅ 数据接口稳定</p>
+        <p style="margin:0;font-size:11px;color:#E0E0E0;line-height:1.5;">新浪财经 HQ API 替代方案验证成功，Tushare 财务数据接入，兴业银行等银行股实时行情可用</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.07);padding:14px 16px;border-left:3px solid #D4A843;">
+        <p style="margin:0 0 8px;font-size:13px;color:#D4A843;font-weight:bold;">🔜 持续迭代</p>
+        <p style="margin:0;font-size:11px;color:#E0E0E0;line-height:1.5;">积累更多企业数据 → 企业画像数据库；接入更多数据源（舆情、监管）；优化PPT模板设计</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Next steps -->
+  <div style="position:absolute;left:26px;top:275px;width:880px;">
+    <p style="margin:0 0 10px;font-size:12px;color:#8C8C8C;font-weight:bold;">下一步工作</p>
+    <div style="display:flex;gap:10px;">
+      <div style="flex:1;background:rgba(255,255,255,0.05);padding:10px 12px;border-top:2px solid #1B5AB5;">
+        <p style="margin:0 0 4px;font-size:11px;color:#FFFFFF;font-weight:bold;">扩大企业覆盖</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">招商银行、浦发银行、平安银行等持续追踪</p>
+      </div>
+      <div style="flex:1;background:rgba(255,255,255,0.05);padding:10px 12px;border-top:2px solid #2E8BC0;">
+        <p style="margin:0 0 4px;font-size:11px;color:#FFFFFF;font-weight:bold;">企业画像数据库</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">积累数据，构建企业画像知识图谱</p>
+      </div>
+      <div style="flex:1;background:rgba(255,255,255,0.05);padding:10px 12px;border-top:2px solid #3AAF6C;">
+        <p style="margin:0 0 4px;font-size:11px;color:#FFFFFF;font-weight:bold;">舆情监控集成</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">接入新闻舆情数据，实时预警信号</p>
+      </div>
+      <div style="flex:1;background:rgba(255,255,255,0.05);padding:10px 12px;border-top:2px solid #D4A843;">
+        <p style="margin:0 0 4px;font-size:11px;color:#FFFFFF;font-weight:bold;">PPT模板扩展</p>
+        <p style="margin:0;font-size:10px;color:#8C8C8C;">增加行业分析、竞品对标等专用模板</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:absolute;left:26px;top:380px;width:880px;height:1px;background:rgba(255,255,255,0.1);"></div>
+
+  <!-- Footer -->
+  <div style="position:absolute;left:26px;top:395px;width:880px;">
+    <p style="margin:0 0 4px;font-size:11px;color:#D4A843;font-weight:bold;">CreditWiki · Hermes Agent · 银行信贷知识库</p>
+    <p style="margin:0;font-size:10px;color:#8C8C8C;">知识库路径：/Users/bismarck/KnowledgeBase/CreditWiki · 报告输出：CreditWiki/outputs/ · 2026年4月21日</p>
+  </div>
+
+  <svg style="position:absolute;right:32px;bottom:24px;" width="36" height="36" viewBox="0 0 36 36">
+    <circle cx="18" cy="18" r="18" fill="#1B5AB5"/>
+    <text x="18" y="18" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="600" fill="#ffffff">10</text>
+  </svg>
+</div>
+
+</body>
+</html>
