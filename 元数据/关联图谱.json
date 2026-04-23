@@ -290,6 +290,901 @@
         "05c020fa",
         "estate"
       ]
+    },
+    "e6331765": {
+      "title": "292ade744f9f_2025年个人述职报告_2026-04-22_e6331765.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "监管合规",
+        "经济指标",
+        "银行"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "e6331765",
+          "title": "292ade744f9f_2025年个人述职报告",
+          "score": 0.675,
+          "reason": "标签关联 + 标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/292ade744f9f_2025年个人述职报告_2026-04-22_e6331765.md"
+        },
+        {
+          "doc_id": "6cabcf36",
+          "title": "集采常态化、仿制药利润被挤压，国有药企如何破局？",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/集采常态化_仿制药利润被挤压_国有药企如何破局__6cabcf36.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        }
+      ]
+    },
+    "25369242": {
+      "title": "34c25ad3d597_审查台账模板_集成行业匹配_2026-04-22_25369242.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "",
+      "key_tags": [
+        "业务标签",
+        "风险标签"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "25369242",
+          "title": "34c25ad3d597_审查台账模板_集成行业匹配",
+          "score": 0.344,
+          "reason": "标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/34c25ad3d597_审查台账模板_集成行业匹配_2026-04-22_25369242.md"
+        },
+        {
+          "doc_id": "d758163e",
+          "title": "c12ac41172a0_龙岩分行产业金融发展思路汇报-练文锋20260415(1)",
+          "score": 0.18,
+          "reason": "标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/c12ac41172a0_龙岩分行产业金融发展思路汇报-练文锋20260415(1)_2026-04-22_d758163e.md"
+        },
+        {
+          "doc_id": "1d4b9239",
+          "title": "64076e9ed7c8_2026年企金专项财务资源配置政策-发送",
+          "score": 0.177,
+          "reason": "标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/64076e9ed7c8_2026年企金专项财务资源配置政策-发送_2026-04-22_1d4b9239.md"
+        }
+      ]
+    },
+    "7b149545": {
+      "title": "38cf64fb75e1_矛盾论与实践论指导银行信贷审查工作_撰写模板_2026-04-22_7b149545.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "监管合规",
+        "房地产",
+        "银行"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "7b149545",
+          "title": "38cf64fb75e1_矛盾论与实践论指导银行信贷审查工作_撰写模板",
+          "score": 0.596,
+          "reason": "标签关联 + 标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/38cf64fb75e1_矛盾论与实践论指导银行信贷审查工作_撰写模板_2026-04-22_7b149545.md"
+        },
+        {
+          "doc_id": "6cabcf36",
+          "title": "集采常态化、仿制药利润被挤压，国有药企如何破局？",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/集采常态化_仿制药利润被挤压_国有药企如何破局__6cabcf36.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        }
+      ]
+    },
+    "1d4b9239": {
+      "title": "64076e9ed7c8_2026年企金专项财务资源配置政策-发送_2026-04-22_1d4b9239.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "汇率利率",
+        "银行"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "1d4b9239",
+          "title": "64076e9ed7c8_2026年企金专项财务资源配置政策-发送",
+          "score": 0.653,
+          "reason": "标签关联 + 标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/64076e9ed7c8_2026年企金专项财务资源配置政策-发送_2026-04-22_1d4b9239.md"
+        },
+        {
+          "doc_id": "6cabcf36",
+          "title": "集采常态化、仿制药利润被挤压，国有药企如何破局？",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/集采常态化_仿制药利润被挤压_国有药企如何破局__6cabcf36.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        }
+      ]
+    },
+    "94f84b91": {
+      "title": "7171d994d330_上海生物医药产业金融服务方案_2026-04-22_94f84b91.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "资产质量",
+        "监管合规",
+        "医药",
+        "银行",
+        "创新药"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "6e326ba0",
+          "title": "f3d243146312_上海生物医药产业金融服务方案",
+          "score": 0.57,
+          "reason": "标签关联 + 标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/f3d243146312_上海生物医药产业金融服务方案_2026-04-22_6e326ba0.md"
+        },
+        {
+          "doc_id": "94f84b91",
+          "title": "7171d994d330_上海生物医药产业金融服务方案",
+          "score": 0.57,
+          "reason": "标签关联 + 标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/7171d994d330_上海生物医药产业金融服务方案_2026-04-22_94f84b91.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        }
+      ]
+    },
+    "3947a965": {
+      "title": "8e9c9ec6f059_国企增强型并购贷款合规风险分析_增强控制权场景_2026-04-22_3947a965.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "",
+      "key_tags": [
+        "风险标签",
+        "监管合规"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "3947a965",
+          "title": "8e9c9ec6f059_国企增强型并购贷款合规风险分析_增强控制权场景",
+          "score": 0.329,
+          "reason": "标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/8e9c9ec6f059_国企增强型并购贷款合规风险分析_增强控制权场景_2026-04-22_3947a965.md"
+        },
+        {
+          "doc_id": "1d4b9239",
+          "title": "64076e9ed7c8_2026年企金专项财务资源配置政策-发送",
+          "score": 0.175,
+          "reason": "标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/64076e9ed7c8_2026年企金专项财务资源配置政策-发送_2026-04-22_1d4b9239.md"
+        },
+        {
+          "doc_id": "e6331765",
+          "title": "292ade744f9f_2025年个人述职报告",
+          "score": 0.173,
+          "reason": "标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/292ade744f9f_2025年个人述职报告_2026-04-22_e6331765.md"
+        }
+      ]
+    },
+    "97b194a1b3ee062e": {
+      "title": "_招银研究_开局之年__2026年宏观经济与资本市场展望__97b194a1b3ee062e.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "## 🔬 第一性原理分析\n    12|\n    13|",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "房地产",
+        "城投",
+        "经济指标",
+        "汇率利率",
+        "银行"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "97b194a1b3ee062e",
+          "title": "【招银研究】开局之年——2026年宏观经济与资本市场展望①",
+          "score": 0.559,
+          "reason": "标签关联 + 标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/_招银研究_开局之年__2026年宏观经济与资本市场展望__97b194a1b3ee062e.md"
+        },
+        {
+          "doc_id": "6cabcf36",
+          "title": "集采常态化、仿制药利润被挤压，国有药企如何破局？",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/集采常态化_仿制药利润被挤压_国有药企如何破局__6cabcf36.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        }
+      ]
+    },
+    "33490bca1bb35a43": {
+      "title": "_招银研究_政策_产业筑基_数智赋能___十五五_规划纲要学习体会之产业篇_33490bca1bb35a43.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "## 🔬 第一性原理分析\n    12|\n    13|",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "监管合规",
+        "房地产",
+        "科技",
+        "医药",
+        "数字化"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "8c3f1a2e",
+          "title": "【监管视角】以贷还贷业务中的信贷法律风险识别与防控",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/以贷还贷信贷法律风险识别与防控_2026-04-22_8c3f1a2e.md"
+        },
+        {
+          "doc_id": "34d082579778ef05",
+          "title": "严监管背景下商业银行普惠信贷业务全流程风险防控要点",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/严监管背景下商业银行普惠信贷业务全流程风险防控要点_34d082579778ef05.md"
+        },
+        {
+          "doc_id": "4e1abdfc",
+          "title": "BCG报告：效率之后，中国医药创新的价值攀登",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/BCG报告_效率之后_中国医药创新的价值攀登_4e1abdfc.md"
+        }
+      ]
+    },
+    "517ab7f3aa90214c": {
+      "title": "_招银研究_行业深度_AI系列研究__端侧AI将重塑全球智能终端产业格局_517ab7f3aa90214c.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "## 🔬 第一性原理分析\n    12|\n    13|",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "科技",
+        "芯片",
+        "银行",
+        "半导体"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "6cabcf36",
+          "title": "集采常态化、仿制药利润被挤压，国有药企如何破局？",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/集采常态化_仿制药利润被挤压_国有药企如何破局__6cabcf36.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        },
+        {
+          "doc_id": "1148daf9",
+          "title": "手搓财务智能体（10）：财务智能体（数字化员工）规划",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/手搓财务智能体_10__财务智能体_数字化员工_规划_1148daf9.md"
+        }
+      ]
+    },
+    "01ae7cbb85d65b5d": {
+      "title": "_招银研究_行业深度_生物医药之创新药__自身免疫病_国产创新药初露锋芒_01ae7cbb85d65b5d.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "## 🔬 第一性原理分析\n    12|\n    13|",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "监管合规",
+        "医药",
+        "银行",
+        "创新药"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "01ae7cbb85d65b5d",
+          "title": "【招银研究|行业深度】生物医药之创新药——自身免疫病：国产创新药初露锋芒",
+          "score": 0.573,
+          "reason": "标签关联 + 标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/_招银研究_行业深度_生物医药之创新药__自身免疫病_国产创新药初露锋芒_01ae7cbb85d65b5d.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        },
+        {
+          "doc_id": "1148daf9",
+          "title": "手搓财务智能体（10）：财务智能体（数字化员工）规划",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/手搓财务智能体_10__财务智能体_数字化员工_规划_1148daf9.md"
+        }
+      ]
+    },
+    "6c78bdc33060a626": {
+      "title": "_招银研究_行业深度_经营性不动产之零售物业__全景透视与评价模型_解码优质现金_6c78bdc33060a626.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "## 🔬 第一性原理分析\n    12|\n    13|",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "科技",
+        "医药",
+        "数字化",
+        "仿制药",
+        "银行"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "6c78bdc33060a626",
+          "title": "【招银研究|行业深度】经营性不动产之零售物业——全景透视与评价模型，解码优质现金流资产",
+          "score": 0.617,
+          "reason": "标签关联 + 标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/_招银研究_行业深度_经营性不动产之零售物业__全景透视与评价模型_解码优质现金_6c78bdc33060a626.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        },
+        {
+          "doc_id": "1148daf9",
+          "title": "手搓财务智能体（10）：财务智能体（数字化员工）规划",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/手搓财务智能体_10__财务智能体_数字化员工_规划_1148daf9.md"
+        }
+      ]
+    },
+    "a1dd980dfdad857c": {
+      "title": "_招银研究_行业深度_跨境电商行业深度报告__履约模式_市场重心和支付结算的三重_a1dd980dfdad857c.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "## 🔬 第一性原理分析\n    12|\n    13|",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "医药",
+        "经济指标",
+        "仿制药",
+        "银行",
+        "集采"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "a1dd980dfdad857c",
+          "title": "【招银研究|行业深度】跨境电商行业深度报告——履约模式、市场重心和支付结算的三重变革",
+          "score": 0.599,
+          "reason": "标签关联 + 标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/_招银研究_行业深度_跨境电商行业深度报告__履约模式_市场重心和支付结算的三重_a1dd980dfdad857c.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        },
+        {
+          "doc_id": "1148daf9",
+          "title": "手搓财务智能体（10）：财务智能体（数字化员工）规划",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/手搓财务智能体_10__财务智能体_数字化员工_规划_1148daf9.md"
+        }
+      ]
+    },
+    "64b22698e7d804b1": {
+      "title": "_招银研究_行业点评_精准施策助力医药产业高质量发展___关于健全药品价格形成机_64b22698e7d804b1.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "## 🔬 第一性原理分析\n    12|\n    13|",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "监管合规",
+        "医药",
+        "仿制药",
+        "银行",
+        "集采"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "64b22698e7d804b1",
+          "title": "【招银研究|行业点评】精准施策助力医药产业高质量发展——《关于健全药品价格形成机制的若干意见》点评",
+          "score": 0.587,
+          "reason": "标签关联 + 标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/_招银研究_行业点评_精准施策助力医药产业高质量发展___关于健全药品价格形成机_64b22698e7d804b1.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        },
+        {
+          "doc_id": "1148daf9",
+          "title": "手搓财务智能体（10）：财务智能体（数字化员工）规划",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/手搓财务智能体_10__财务智能体_数字化员工_规划_1148daf9.md"
+        }
+      ]
+    },
+    "2e068c7f21f65ba4": {
+      "title": "_招银研究_行业研究2026年年度展望合集__新兴产业和未来产业_2e068c7f21f65ba4.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "## 🔬 第一性原理分析\n    12|\n    13|",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "科技",
+        "经济指标",
+        "芯片",
+        "银行",
+        "半导体"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "6cabcf36",
+          "title": "集采常态化、仿制药利润被挤压，国有药企如何破局？",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/集采常态化_仿制药利润被挤压_国有药企如何破局__6cabcf36.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        },
+        {
+          "doc_id": "1148daf9",
+          "title": "手搓财务智能体（10）：财务智能体（数字化员工）规划",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/手搓财务智能体_10__财务智能体_数字化员工_规划_1148daf9.md"
+        }
+      ]
+    },
+    "e3a55c88a5101788": {
+      "title": "_招银研究_行业研究2026年年度展望合集__服务业和基建地产_e3a55c88a5101788.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "## 🔬 第一性原理分析\n    12|\n    13|",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "房地产",
+        "城投",
+        "科技",
+        "数字化转型",
+        "银行"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "6cabcf36",
+          "title": "集采常态化、仿制药利润被挤压，国有药企如何破局？",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/集采常态化_仿制药利润被挤压_国有药企如何破局__6cabcf36.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        },
+        {
+          "doc_id": "1148daf9",
+          "title": "手搓财务智能体（10）：财务智能体（数字化员工）规划",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/手搓财务智能体_10__财务智能体_数字化员工_规划_1148daf9.md"
+        }
+      ]
+    },
+    "f5533c166f52bd87": {
+      "title": "_招银研究_行业研究2026年年度展望合集__蓄力开新局_产业焕新机_f5533c166f52bd87.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "## 🔬 第一性原理分析\n    12|\n    13|",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "监管合规",
+        "医药",
+        "经济指标",
+        "仿制药",
+        "银行"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "f5533c166f52bd87",
+          "title": "【招银研究】行业研究2026年年度展望合集①：蓄力开新局，产业焕新机",
+          "score": 0.602,
+          "reason": "标签关联 + 标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/_招银研究_行业研究2026年年度展望合集__蓄力开新局_产业焕新机_f5533c166f52bd87.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        },
+        {
+          "doc_id": "1148daf9",
+          "title": "手搓财务智能体（10）：财务智能体（数字化员工）规划",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/手搓财务智能体_10__财务智能体_数字化员工_规划_1148daf9.md"
+        }
+      ]
+    },
+    "d758163e": {
+      "title": "c12ac41172a0_龙岩分行产业金融发展思路汇报-练文锋20260415(1)_2026-04-22_d758163e.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "房地产",
+        "银行"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "6cabcf36",
+          "title": "集采常态化、仿制药利润被挤压，国有药企如何破局？",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/集采常态化_仿制药利润被挤压_国有药企如何破局__6cabcf36.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        },
+        {
+          "doc_id": "1148daf9",
+          "title": "手搓财务智能体（10）：财务智能体（数字化员工）规划",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/手搓财务智能体_10__财务智能体_数字化员工_规划_1148daf9.md"
+        }
+      ]
+    },
+    "8d256cdb": {
+      "title": "e0f06a0a7f84_202106 总行投行与上海银保监自贸处关于并购贷款参与跨境等交易若干问题的交流纪要_2026-04-22_8d256cdb.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "",
+      "key_tags": [
+        "主体标签",
+        "风险标签",
+        "监管合规",
+        "科技",
+        "人工智能",
+        "银行",
+        "半导体"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "6cabcf36",
+          "title": "集采常态化、仿制药利润被挤压，国有药企如何破局？",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/集采常态化_仿制药利润被挤压_国有药企如何破局__6cabcf36.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        },
+        {
+          "doc_id": "1148daf9",
+          "title": "手搓财务智能体（10）：财务智能体（数字化员工）规划",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/手搓财务智能体_10__财务智能体_数字化员工_规划_1148daf9.md"
+        }
+      ]
+    },
+    "6e326ba0": {
+      "title": "f3d243146312_上海生物医药产业金融服务方案_2026-04-22_6e326ba0.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "资产质量",
+        "监管合规",
+        "医药",
+        "银行",
+        "创新药"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "6e326ba0",
+          "title": "f3d243146312_上海生物医药产业金融服务方案",
+          "score": 0.578,
+          "reason": "标签关联 + 标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/f3d243146312_上海生物医药产业金融服务方案_2026-04-22_6e326ba0.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        },
+        {
+          "doc_id": "1148daf9",
+          "title": "手搓财务智能体（10）：财务智能体（数字化员工）规划",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/手搓财务智能体_10__财务智能体_数字化员工_规划_1148daf9.md"
+        }
+      ]
+    },
+    "34d082579778ef05": {
+      "title": "严监管背景下商业银行普惠信贷业务全流程风险防控要点_34d082579778ef05.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "## 🔬 第一性原理分析\n    12|\n    13|",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "监管合规",
+        "科技",
+        "医药",
+        "数字化",
+        "仿制药"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "34d082579778ef05",
+          "title": "严监管背景下商业银行普惠信贷业务全流程风险防控要点",
+          "score": 0.739,
+          "reason": "标签关联 + 标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/严监管背景下商业银行普惠信贷业务全流程风险防控要点_34d082579778ef05.md"
+        },
+        {
+          "doc_id": "8c3f1a2e",
+          "title": "【监管视角】以贷还贷业务中的信贷法律风险识别与防控",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/以贷还贷信贷法律风险识别与防控_2026-04-22_8c3f1a2e.md"
+        },
+        {
+          "doc_id": "4e1abdfc",
+          "title": "BCG报告：效率之后，中国医药创新的价值攀登",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/BCG报告_效率之后_中国医药创新的价值攀登_4e1abdfc.md"
+        }
+      ]
+    },
+    "8c3f1a2e": {
+      "title": "以贷还贷信贷法律风险识别与防控_2026-04-22_8c3f1a2e.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "## 🔬 第一性原理分析\n    12|\n    13|",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "资产质量",
+        "监管合规",
+        "科技",
+        "医药",
+        "数字化"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "8c3f1a2e",
+          "title": "【监管视角】以贷还贷业务中的信贷法律风险识别与防控",
+          "score": 0.65,
+          "reason": "标签关联 + 标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/以贷还贷信贷法律风险识别与防控_2026-04-22_8c3f1a2e.md"
+        },
+        {
+          "doc_id": "34d082579778ef05",
+          "title": "严监管背景下商业银行普惠信贷业务全流程风险防控要点",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/严监管背景下商业银行普惠信贷业务全流程风险防控要点_34d082579778ef05.md"
+        },
+        {
+          "doc_id": "4e1abdfc",
+          "title": "BCG报告：效率之后，中国医药创新的价值攀登",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/BCG报告_效率之后_中国医药创新的价值攀登_4e1abdfc.md"
+        }
+      ]
+    },
+    "3f8b2c1a": {
+      "title": "供应链金融三大模式_应收类预付类存货类_2026-04-22_3f8b2c1a.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "## 🔬 第一性原理分析\n    12|\n    13|",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "监管合规",
+        "中间业务",
+        "风险管理",
+        "银行",
+        "供应链金融"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "3f8b2c1a",
+          "title": "【供应链金融】三大融资模式：应收类、预付类、存货类",
+          "score": 0.6,
+          "reason": "标签关联 + 标题相似",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/供应链金融三大模式_应收类预付类存货类_2026-04-22_3f8b2c1a.md"
+        },
+        {
+          "doc_id": "6cabcf36",
+          "title": "集采常态化、仿制药利润被挤压，国有药企如何破局？",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/集采常态化_仿制药利润被挤压_国有药企如何破局__6cabcf36.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        }
+      ]
+    },
+    "4807820e5e27cc94": {
+      "title": "卖房敢不敢不用渠道_4807820e5e27cc94.md",
+      "category": "未分类",
+      "subcategory": "articles",
+      "first_principle": "## 🔬 第一性原理分析\n    12|\n    13|",
+      "key_tags": [
+        "主体标签",
+        "业务标签",
+        "风险标签",
+        "监管合规",
+        "房地产",
+        "渠道佣金",
+        "开发商",
+        "银行"
+      ],
+      "created": "2026-04-22",
+      "connections": [
+        {
+          "doc_id": "6cabcf36",
+          "title": "集采常态化、仿制药利润被挤压，国有药企如何破局？",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/集采常态化_仿制药利润被挤压_国有药企如何破局__6cabcf36.md"
+        },
+        {
+          "doc_id": "5aca2117",
+          "title": "给Karpathy的LLM Wiki装上自动引擎",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/给Karpathy的LLM_Wiki装上自动引擎_5aca2117.md"
+        },
+        {
+          "doc_id": "1148daf9",
+          "title": "手搓财务智能体（10）：财务智能体（数字化员工）规划",
+          "score": 0.55,
+          "reason": "标签关联",
+          "path": "/Users/bismarck/KnowledgeBase/CreditWiki/wiki/articles/手搓财务智能体_10__财务智能体_数字化员工_规划_1148daf9.md"
+        }
+      ]
     }
   },
   "connection_reasons": {

@@ -40,6 +40,22 @@ RSS_SOURCES = {
         "category": "宏观研究",
         "timeout": 10,
         "keywords": ["货币政策", "财政政策", "利率", "汇率", "通胀", "GDP", "CPI", "PPI", "社融", "M2", "央行", "美联储", "降息", "加息", "存款准备金", "公开市场"]
+    },
+    "sina_chengtou": {
+        "name": "新浪城投",
+        "url": "https://feed.mix.sina.com.cn/api/roll/get?pageid=153&lid=2517&num=20",
+        "type": "api",
+        "category": "行业研究",
+        "timeout": 10,
+        "keywords": ["城投", "平台贷", "地方融资", "城投债", "城投公司", "隐性债务", "化债", "政信", "政府债务", "财政", "开发区", "园区债"]
+    },
+    "sina_industry": {
+        "name": "新浪产业",
+        "url": "https://feed.mix.sina.com.cn/api/roll/get?pageid=153&lid=2415&num=20",
+        "type": "api",
+        "category": "行业研究",
+        "timeout": 10,
+        "keywords": ["城投", "平台贷", "新能源", "光伏", "风电", "储能", "锂电池", "新能源汽车", "动力电池", "半导体", "消费", "零售", "家电", "汽车", "造船", "航运", "港口", "钢铁", "煤炭", "军工", "国防", "航空", "房地产", "城中村", "保障房"]
     }
 }
 

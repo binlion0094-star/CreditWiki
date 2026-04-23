@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""上传文件到飞书云文档 - 使用Gateway进程凭证"""
+"""Upload file to Feishu Drive - using Gateway process credentials"""
 
 import os
 import sys
@@ -12,7 +12,6 @@ except ImportError as e:
     print(f"ERROR: {e}")
     sys.exit(1)
 
-# 从环境变量获取凭证
 APP_ID = os.environ.get("FEISHU_APP_ID")
 APP_SECRET = os.environ.get("FEISHU_APP_SECRET")
 FOLDER_TOKEN = "RdKwfZXLKlLwrSdSsN7cRSIunmh"
@@ -20,8 +19,6 @@ FOLDER_TOKEN = "RdKwfZXLKlLwrSdSsN7cRSIunmh"
 if not APP_ID or not APP_SECRET:
     print("ERROR: FEISHU_APP_ID or FEISHU_APP_SECRET not set")
     sys.exit(1)
-
-print(f"Using APP_ID: {APP_ID}", file=sys.stderr)
 
 def upload_file(file_path: str) -> dict:
     client = (
@@ -59,9 +56,7 @@ def upload_file(file_path: str) -> dict:
         return {"success": False, "error": f"code={response.code} msg={response.msg}"}
     
     file_token = getattr(response.data, "file_token", None) if response.data else None
-    url = f"https://xxx.feishu.cn/drive/file/{file_token}" if file_token else None
-    
-    return {"success": True, "file_token": file_token, "url": url}
+    return {"success": True, "file_token": file_token}
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

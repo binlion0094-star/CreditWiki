@@ -37,17 +37,26 @@ def get_all_articles():
                 tags = []
                 doc_id = ""
 
+                # 使用YAML解析frontmatter
+                import yaml
+                raw_text = ''.join(lines)
+                fm_match = re.search(r'^---\s*\n(.*?)\n---\s*\n', raw_text, re.DOTALL)
+                if fm_match:
+                    try:
+                        fm = yaml.safe_load(fm_match.group(1)) or {}
+                        title = fm.get('title', '') or title
+                        doc_id = fm.get('doc_id', '') or doc_id
+                        tags_raw = fm.get('tags', [])
+                        if isinstance(tags_raw, list):
+                            tags = [str(t) for t in tags_raw]
+                    except:
+                        pass
+                
+                # 降级：从首行提取标题
                 for line in lines[:20]:
                     if line.startswith('# ') and not title:
                         title = line.strip('# ').strip()
-                    if '文档ID' in line or 'doc_id' in line.lower():
-                        parts = line.split('：')
-                        if len(parts) > 1:
-                            doc_id = parts[-1].strip()
-                    if '标签' in line:
-                        tag_line = line.replace('标签', '').replace('：', ':').strip()
-                        if ':' in tag_line:
-                            tags = [t.strip() for t in tag_line.split(':')[-1].split()]
+                        break
 
                 articles.append({
                     "file": str(rel_path),
